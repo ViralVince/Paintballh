@@ -86,8 +86,8 @@ public class Main extends JavaPlugin implements Listener {
 	    kitApi = new KitAPI();
 	    kitApi.setMysql(mysql);
 	   
-	    //g
-	    //f
+	    //test
+	    
 	    	    	    	    	 	    
 		plugin = this;
 				
