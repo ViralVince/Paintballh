@@ -130,7 +130,7 @@ public class Main extends JavaPlugin implements Listener {
 		ByteArrayOutputStream b = new ByteArrayOutputStream();
         DataOutputStream out = new DataOutputStream(b);
         
-//h        	try
+        	try
             {
         		if(Main.playing.size() > cfg.getInt("Maxplayers")) {
               out.writeUTF("Connect");
