@@ -6,6 +6,7 @@ import java.util.List;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.DyeColor;
+import org.bukkit.Effect;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -209,37 +210,38 @@ public class EVENTinteract implements Listener{
 				
 			    ((Entity) plate).setVelocity(p.getLocation().getDirection().multiply(1.4D));
 			    
-				new BukkitRunnable() {
-					 
-					Player p = e.getPlayer();
-					Location loc = p.getLocation();
-					Vector dir = p.getLocation().getDirection().normalize();
-					
-					double t = 0;
-					
-					public void run() {
-						
-						t += 0.5;
-						
-						double x = dir.getX() * t;
-						double y = dir.getY() * t + 1.5;
-						double z = dir.getZ() * t;
-						
-						loc.add(x, y, z);
-						
-						
-						
-						loc.subtract(x, y, z);
-						
-						if(t > 40) {
-							
-							this.cancel();
-							
-							}
-						}
-					}.runTaskTimer(Main.getInstance(), 0, 1);
+			    p.getWorld().playEffect(plate.getLocation(), Effect.HEART, 5);
 			    
-			    
+//				new BukkitRunnable() {
+//					 
+////					Player p = e.getPlayer();
+////					Location loc = p.getLocation();
+////					Vector dir = p.getLocation().getDirection().normalize();
+////					
+////					double t = 0;
+////					
+////					public void run() {
+////						
+////						t += 0.5;
+////						
+////						double x = dir.getX() * t;
+////						double y = dir.getY() * t + 1.5;
+////						double z = dir.getZ() * t;
+////						
+////						loc.add(x, y, z);
+////						
+////						
+////						
+////						loc.subtract(x, y, z);
+////						
+////						if(t > 40) {
+////							
+////							this.cancel();
+////							
+////							}
+////						}
+////					}.runTaskTimer(Main.getInstance(), 0, 1);
+			 
 			    
 			    
 			    startershot.add(p);
