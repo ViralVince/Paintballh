@@ -1,0 +1,21 @@
+main: de.viralvince.paintball.main.Main
+version: 1.0
+name: Paintball
+author: ViralVince
+
+commands:
+     setspawn:
+          description: Setzte lobby und Team spawns!
+     setminplayers:
+          description: Setze die minimale Spieleranzahl!
+     setmaxplayers:
+          description: Setze die maximale Spieleranzahl!
+     start:
+          description: Starte das Spiel!
+     coins:
+          description: Erfahre wie viele Coins du hast!
+     addcoins:
+          description: Add Coins to Players!
+     addkit:
+          description: Add Kits to Players!
+     
