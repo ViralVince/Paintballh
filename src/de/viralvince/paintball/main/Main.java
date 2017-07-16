@@ -45,7 +45,7 @@ public class Main extends JavaPlugin implements Listener {
 	
 	  
 	private static Main plugin;
-	public static final String pr = "ง5Paintball ง7>>";
+	public static final String pr = "ยง5Paintball ยง7>>";
 	
 	File file = new File("plugins/paintball/config.yml");
 	YamlConfiguration cfg = YamlConfiguration.loadConfiguration(file);
@@ -130,7 +130,7 @@ public class Main extends JavaPlugin implements Listener {
 		ByteArrayOutputStream b = new ByteArrayOutputStream();
         DataOutputStream out = new DataOutputStream(b);
         
-        	try
+//h        	try
             {
         		if(Main.playing.size() > cfg.getInt("Maxplayers")) {
               out.writeUTF("Connect");
@@ -171,7 +171,7 @@ public class Main extends JavaPlugin implements Listener {
 //3 : Darkness
 //4 : Light
 
-
+//h
 
 
 
