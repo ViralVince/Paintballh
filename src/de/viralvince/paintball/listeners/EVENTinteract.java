@@ -215,8 +215,8 @@ public class EVENTinteract implements Listener{
 
 					@Override
 					public void run() {
-
 						
+			            
 						if(plate.getLocation().getBlock().equals(Material.AIR)) {
 							
 					    p.getWorld().playEffect(plate.getLocation(), Effect.SLIME, 5);
