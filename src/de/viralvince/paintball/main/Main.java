@@ -45,7 +45,7 @@ public class Main extends JavaPlugin implements Listener {
 	
 	  
 	private static Main plugin;
-	public static final String pr = "ยง5Paintball ยง7>>";
+	public static final String pr = "ง5Paintball ง7>>";
 	
 	File file = new File("plugins/paintball/config.yml");
 	YamlConfiguration cfg = YamlConfiguration.loadConfiguration(file);
