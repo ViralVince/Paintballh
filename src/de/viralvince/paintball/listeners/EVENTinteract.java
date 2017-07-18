@@ -221,10 +221,24 @@ public class EVENTinteract implements Listener{
 							
 					    p.getWorld().playEffect(plate.getLocation(), Effect.SLIME, 5);
 					    
+						} else {
+							
+							this.cancel();
+							for(Entity entities : Bukkit.getServer().getWorld(plate.getWorld().getName()).getEntities()) {
+								
+								if(!entities.getLocation().getBlock().equals(Material.AIR)) {
+									if(!(entities instanceof Player)) {
+										
+										entities.remove();
+										
+									}
+									
+								}
+								
+							}
+							
 						}
 					}
-			    	
-			    	
 			    	
 			    }.runTaskTimer(Main.getInstance(), 0, 1);
 			    
@@ -254,23 +268,23 @@ public class EVENTinteract implements Listener{
 			    
 
 	            
-	            Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
-
-					@Override
-					public void run() {
-                    
-						for(Entity entities : p.getWorld().getEntities()) {
-							
-							if(!(entities instanceof Player)) {
-								
-							entities.remove();
-								
-							}
-						}
-						
-					}
-	            	
-	            }, 40);
+//	            Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getInstance(), new Runnable() {
+//
+//					@Override
+//					public void run() {
+//                    
+//						for(Entity entities : p.getWorld().getEntities()) {
+//							
+//							if(!(entities instanceof Player)) {
+//								
+//							entities.remove();
+//								
+//							}
+//						}
+//						
+//					}
+//	            	
+//	            }, 40);
 				} else {
 					p.sendMessage(Main.pr + " §cBitte warte einen Moment befor du diese Waffe erneut benutzt!");
 				}
