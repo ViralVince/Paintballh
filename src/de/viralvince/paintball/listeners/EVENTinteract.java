@@ -208,7 +208,7 @@ public class EVENTinteract implements Listener{
 				
 				final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.SLIME_BALL));
 				
-			    ((Entity) slime).setVelocity(p.getLocation().getDirection().multiply(1.4D));
+			    ((Entity) slime).setVelocity(p.getLocation().getDirection().multiply(1.2D));
 			    
 			    new BukkitRunnable() {
 			    	
@@ -217,25 +217,27 @@ public class EVENTinteract implements Listener{
 					public void run() {
 						
 			            
-						if(slime.getLocation().getBlock().equals(Material.AIR)) {
-							
+						if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
+						
 					    p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
 					    
-//						} else {
-//							
-//							this.cancel();
-//							for(Entity entities : Bukkit.getServer().getWorld(slime.getWorld().getName()).getEntities()) {
-//								
-//								if(!entities.getLocation().getBlock().equals(Material.AIR)) {
-//									if(!(entities instanceof Player)) {
-//										
-//										entities.remove();
-//										
-//									}
-//									
-//								}
-//								
-//							}
+					    slime.getNe
+					    
+						} else {
+							
+							this.cancel();
+							for(Entity entities : Bukkit.getServer().getWorld(slime.getWorld().getName()).getEntities()) {
+								
+								if(slime.getVelocity().equals(slime.getVelocity().zero())) {
+									if(!(entities instanceof Player)) {
+										
+										entities.remove();
+										
+									}
+									
+								}
+								
+							}
 							
 						}
 					}
