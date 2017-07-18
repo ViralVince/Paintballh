@@ -214,7 +214,7 @@ public class EVENTinteract implements Listener{
 			    
 //				new BukkitRunnable() {
 //					 
-////					Player p = e.getPlayer();
+//					Player p = e.getPlayer();
 ////					Location loc = p.getLocation();
 ////					Vector dir = p.getLocation().getDirection().normalize();
 ////					
