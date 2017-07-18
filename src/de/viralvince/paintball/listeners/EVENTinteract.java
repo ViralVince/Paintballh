@@ -208,9 +208,25 @@ public class EVENTinteract implements Listener{
 				
 				final Item plate = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.SLIME_BALL));
 				
-			    ((Entity) plate).setVelocity(p.getLocation().getDirection().multiply(1.4D));
+			    ((Entity) plate).setVelocity(p.getLocation().getDirection().multiply(1.8D));
 			    
-			    p.getWorld().playEffect(plate.getLocation(), Effect.HEART, 5);
+			    new BukkitRunnable() {
+			    	
+					int high = 100;
+
+					@Override
+					public void run() {
+
+					    p.getWorld().playEffect(plate.getLocation(), Effect.SLIME, 5);
+					    high--;
+					    
+						
+					}
+			    	
+			    	
+			    	
+			    }.runTaskTimer(Main.getInstance(), 0, 1);
+			    
 			    
 //				new BukkitRunnable() {
 //					 
