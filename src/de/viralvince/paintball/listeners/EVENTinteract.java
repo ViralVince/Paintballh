@@ -208,16 +208,14 @@ public class EVENTinteract implements Listener{
 				
 				final Item plate = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.SLIME_BALL));
 				
-			    ((Entity) plate).setVelocity(p.getLocation().getDirection().multiply(2.2D));
+			    ((Entity) plate).setVelocity(p.getLocation().getDirection().multiply(1.4D));
 			    
 			    new BukkitRunnable() {
 			    	
-//					int high = 100;
 
 					@Override
 					public void run() {
 
-//						Location loc = new Location(plate.getWorld(), plate.getLocation().getX(), plate.getLocation().getY(), plate.getLocation().getZ());
 						
 						if(plate.getLocation().getBlock().equals(Material.AIR)) {
 							
@@ -231,35 +229,6 @@ public class EVENTinteract implements Listener{
 			    }.runTaskTimer(Main.getInstance(), 0, 1);
 			    
 			    
-//				new BukkitRunnable() {
-//					 
-//					Player p = e.getPlayer();
-////					Location loc = p.getLocation();
-////					Vector dir = p.getLocation().getDirection().normalize();
-////					
-////					double t = 0;
-////					
-////					public void run() {
-////						
-////						t += 0.5;
-////						
-////						double x = dir.getX() * t;
-////						double y = dir.getY() * t + 1.5;
-////						double z = dir.getZ() * t;
-////						
-////						loc.add(x, y, z);
-////						
-////						
-////						
-////						loc.subtract(x, y, z);
-////						
-////						if(t > 40) {
-////							
-////							this.cancel();
-////							
-////							}
-////						}
-////					}.runTaskTimer(Main.getInstance(), 0, 1);
 			 
 			    
 			    
@@ -278,8 +247,6 @@ public class EVENTinteract implements Listener{
 							
 						}
 						
-					//https://github.com/DarkBlade12/ParticleEffect/blob/master/src/main/java/com/darkblade12/particleeffect/ReflectionUtils.java
-					//https://github.com/DarkBlade12/ParticleEffect/blob/master/src/main/java/com/darkblade12/particleeffect/ParticleEffect.java
 						
 						}
 					
