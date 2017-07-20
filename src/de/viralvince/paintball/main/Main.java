@@ -29,6 +29,7 @@ import de.viralvince.paintball.listeners.EVENTinteract;
 import de.viralvince.paintball.listeners.EVENTinventoryclick;
 import de.viralvince.paintball.listeners.EVENTjoin;
 import de.viralvince.paintball.listeners.EVENTmove;
+import de.viralvince.paintball.listeners.EVENTpickup;
 import de.viralvince.paintball.listeners.EVENTquit;
 
 
@@ -111,6 +112,7 @@ public class Main extends JavaPlugin implements Listener {
 		pm.registerEvents(new EVENTmove(), this);
 		pm.registerEvents(new EVENTbuild(), this);
 		pm.registerEvents(new EVENTquit(), this);
+		pm.registerEvents(new EVENTpickup(), this);
 		
 		System.out.println("[Paintball] Das Plugin wurde erfolgreich gestartet");
 		
