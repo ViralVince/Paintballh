@@ -206,27 +206,42 @@ public class EVENTinteract implements Listener{
 				if(!startershot.contains(p)) {
 				
 				
-				final Item plate = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.SLIME_BALL));
+				final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.SLIME_BALL));
 				
-			    ((Entity) plate).setVelocity(p.getLocation().getDirection().multiply(1.4D));
+			    ((Entity) slime).setVelocity(p.getLocation().getDirection().multiply(1.2D));
 			    
 			    new BukkitRunnable() {
 			    	
 
 					@Override
 					public void run() {
-
 						
-						if(plate.getLocation().getBlock().equals(Material.AIR)) {
+						for(Entity e : slime.getLocation().getChunk().getEntities()) {
 							
-					    p.getWorld().playEffect(plate.getLocation(), Effect.SLIME, 5);
+							if(e.getLocation().distance(slime.getLocation()) < 1.0) {
+								if(e instanceof Player) {
+									
+									((Player) e).setHealth(((Player) e).getHealth() - 1.0);
+									
+								}
+								
+								
+							}
+							
+						}
+			            
+						if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
+						
+					    p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
+					    
+					    slime.getNearbyEntities(1, 1, 1);
 					    
 						} else {
 							
 							this.cancel();
-							for(Entity entities : Bukkit.getServer().getWorld(plate.getWorld().getName()).getEntities()) {
+							for(Entity entities : Bukkit.getServer().getWorld(slime.getWorld().getName()).getEntities()) {
 								
-								if(!entities.getLocation().getBlock().equals(Material.AIR)) {
+								if(slime.getVelocity().equals(slime.getVelocity().zero())) {
 									if(!(entities instanceof Player)) {
 										
 										entities.remove();
