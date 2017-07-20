@@ -219,7 +219,7 @@ public class EVENTinteract implements Listener{
 					
 						for(Entity e : slime.getLocation().getChunk().getEntities()) {
 							if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
-							if(e.getLocation().distance(slime.getLocation()) < 1.0) {
+							if(e.getLocation().distance(slime.getLocation()) < 2.0) {
 								if(e instanceof Player) {
 									
 //									((Player) e).setHealth(((Player) e).getHealth() - 1.0);
