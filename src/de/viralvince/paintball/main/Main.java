@@ -165,6 +165,23 @@ public class Main extends JavaPlugin implements Listener {
 	    return this.mysql;
 	  }
 	  
+	  public String getTeam(Player p) {
+		  
+		if(Main.blue.contains(p)) {
+			  
+			  return "blue";
+			  
+		  } else if(Main.red.contains(p)) {
+			  
+			  return "red";
+				  
+			  }
+		
+		return null;
+		
+		}
+	  }
+	  
 
 //Kits
 //1 : Starter	  
@@ -178,5 +195,3 @@ public class Main extends JavaPlugin implements Listener {
 
 
 
-
-}

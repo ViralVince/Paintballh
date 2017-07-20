@@ -218,13 +218,25 @@ public class EVENTinteract implements Listener{
 						
 					
 						for(Entity e : slime.getLocation().getChunk().getEntities()) {
-							if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
+//							if (!(slime.getVelocity().equals(slime.getVelocity().zero()))) { 
+							if(slime.isOnGround()) {
 							if(e.getLocation().distance(slime.getLocation()) < 2.0) {
 								if(e instanceof Player) {
+									if(!(e == p)) {
+										if(!Main.getInstance().getTeam(p).equals(Main.getInstance().getTeam((Player) e))) {
 									
-//									((Player) e).setHealth(((Player) e).getHealth() - 1.0);
-									((Player) e).damage(2.0);
+											if(((Player) e).getHealth() - 1.0 == 0.0) {
+												 
+												e.sendMessage(Main.pr + " §cDu wurdest von " + p.getDisplayName() + " §cgetötet.");
+												p.sendMessage(Main.pr + " §aDu hast " + ((Player) e).getDisplayName() + " §rgetötet.");
+												
+											}
+											
+											((Player) e).damage(1.0);
 									
+									
+										}
+									}
 								}
 								}
 								
@@ -233,7 +245,7 @@ public class EVENTinteract implements Listener{
 							
 						}
 			            
-						if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
+						if (!(slime.getVelocity().zero().equals(slime.getVelocity().zero()))){ 	
 						
 					    p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
 					    
