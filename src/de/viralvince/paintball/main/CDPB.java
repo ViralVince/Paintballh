@@ -2,6 +2,7 @@ package de.viralvince.paintball.main;
 
 import java.io.File;
 import org.bukkit.Bukkit;
+import org.bukkit.DyeColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -180,6 +181,27 @@ public class CDPB {
 				p.getInventory().setItem(8, starters);
 				
 				p.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
+				ItemStack rboots = new ItemStack(Material.LEATHER_BOOTS, 1, DyeColor.RED.getData());
+				ItemStack rleggins = new ItemStack(Material.LEATHER_LEGGINGS, 1, DyeColor.RED.getData());
+				ItemStack rchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1, DyeColor.RED.getData());
+				ItemStack rhelm = new ItemStack(Material.LEATHER_HELMET, 1, DyeColor.RED.getData());
+				
+				ItemStack bboots = new ItemStack(Material.LEATHER_BOOTS, 1, DyeColor.BLUE.getData());
+				ItemStack bleggins = new ItemStack(Material.LEATHER_LEGGINGS, 1, DyeColor.BLUE.getData());
+				ItemStack bchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1, DyeColor.BLUE.getData());
+				ItemStack bhelm = new ItemStack(Material.LEATHER_HELMET, 1, DyeColor.BLUE.getData());
+				
+				if(Main.red.contains(p)) {
+					p.getInventory().setHelmet(rhelm);
+					p.getInventory().setChestplate(rchest);
+					p.getInventory().setLeggings(rleggins);
+					p.getInventory().setBoots(rboots);
+				} else if(Main.blue.contains(p)) {
+					p.getInventory().setHelmet(bhelm);
+					p.getInventory().setChestplate(bchest);
+					p.getInventory().setLeggings(bleggins);
+					p.getInventory().setBoots(bboots);
+				}
 				
 			}	
 		}
