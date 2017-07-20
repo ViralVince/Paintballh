@@ -37,7 +37,7 @@ public class EVENTinteract implements Listener{
 	public static int stcoolsek = 1;
 	public static ArrayList<Player> cd = new ArrayList<>();
 	public static ArrayList<Player> startershot = new ArrayList<>();
-		
+	
 	@EventHandler
 	
 	public void onInt(PlayerInteractEvent e)  {
@@ -221,7 +221,8 @@ public class EVENTinteract implements Listener{
 							if(e.getLocation().distance(slime.getLocation()) < 1.0) {
 								if(e instanceof Player) {
 									
-									((Player) e).setHealth(((Player) e).getHealth() - 1.0);
+//									((Player) e).setHealth(((Player) e).getHealth() - 1.0);
+									((Player) e).damage(1.0);
 									
 								}
 								
@@ -234,7 +235,6 @@ public class EVENTinteract implements Listener{
 						
 					    p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
 					    
-					    slime.getNearbyEntities(1, 1, 1);
 					    
 						} else {
 							
