@@ -223,6 +223,7 @@ public class EVENTinteract implements Listener{
 								if(e instanceof Player) {
 									
 //									((Player) e).setHealth(((Player) e).getHealth() - 1.0);
+									((Player) e).damage(2.0);
 									
 								}
 								}
