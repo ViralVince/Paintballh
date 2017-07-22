@@ -165,6 +165,13 @@ public class Main extends JavaPlugin implements Listener {
 	    return this.mysql;
 	  }
 	  
+	public ArrayList<Player> getRed() {
+			  return red;
+		  }
+	public ArrayList<Player> getBlue() {
+		  return blue;
+	}
+	  
 	  public String getTeam(Player p) {
 		  
 		if(Main.blue.contains(p)) {
