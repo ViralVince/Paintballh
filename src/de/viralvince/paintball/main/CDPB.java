@@ -123,8 +123,10 @@ public class CDPB {
 		if(!Main.red.contains(p) && !Main.blue.contains(p)) {
 			if(Main.red.size() > Main.blue.size()) {
 				Main.blue.add(p);
+				p.setDisplayName("§9"+ p.getName()+ "§f");
 			} else if(Main.red.size() < Main.blue.size()) {
 				Main.red.add(p);
+				p.setDisplayName("§c"+ p.getName()+ "§f");
 			} else if(Main.red.size() == Main.blue.size()) {								
 				Main.red.add(p);													
 			}
