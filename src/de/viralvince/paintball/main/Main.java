@@ -24,6 +24,7 @@ import de.viralvince.paintball.commands.CMDsetminplayers;
 import de.viralvince.paintball.commands.CMDsetspawn;
 import de.viralvince.paintball.commands.CMDstart;
 import de.viralvince.paintball.kits.KitAPI;
+import de.viralvince.paintball.listeners.EVENTDeath;
 import de.viralvince.paintball.listeners.EVENTbuild;
 import de.viralvince.paintball.listeners.EVENTinteract;
 import de.viralvince.paintball.listeners.EVENTinventoryclick;
@@ -113,6 +114,7 @@ public class Main extends JavaPlugin implements Listener {
 		pm.registerEvents(new EVENTbuild(), this);
 		pm.registerEvents(new EVENTquit(), this);
 		pm.registerEvents(new EVENTpickup(), this);
+		pm.registerEvents(new EVENTDeath(), this);
 		
 		System.out.println("[Paintball] Das Plugin wurde erfolgreich gestartet");
 		

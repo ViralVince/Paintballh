@@ -230,7 +230,7 @@ public class EVENTinteract implements Listener{
 												
 												e.sendMessage(Main.pr + " §cDu wurdest von " + p.getDisplayName() + " §cgetötet.");
 												p.sendMessage(Main.pr + " §aDu hast " + ((Player) e).getDisplayName() + " §rgetötet.");
-												
+//												s
 												
 											}
 									
