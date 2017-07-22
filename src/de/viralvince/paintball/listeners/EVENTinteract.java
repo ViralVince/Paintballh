@@ -223,16 +223,17 @@ public class EVENTinteract implements Listener{
 							if(e.getLocation().distance(slime.getLocation()) < 2.0) {
 								if(e instanceof Player) {
 									if(!(e == p)) {
-										if(!Main.getInstance().getTeam(p).equals(Main.getInstance().getTeam((Player) e))) {
-									
+//										if(!Main.getInstance().getTeam(p).equals(Main.getInstance().getTeam((Player) e))) {
+											if(!(Main.getInstance().red.contains(p) && Main.getInstance().red.contains(e)) || (Main.getInstance().blue.contains(p) && Main.getInstance().blue.contains(e))) {
+									  
+											((Player) e).damage(1.0);
+											
 											if(((Player) e).getHealth() - 1.0 == 0.0) {
 												 
 												e.sendMessage(Main.pr + " §cDu wurdest von " + p.getDisplayName() + " §cgetötet.");
 												p.sendMessage(Main.pr + " §aDu hast " + ((Player) e).getDisplayName() + " §rgetötet.");
 												
 											}
-											
-											((Player) e).damage(1.0);
 									
 									
 										}
