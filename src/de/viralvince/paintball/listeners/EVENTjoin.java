@@ -119,7 +119,7 @@ public class EVENTjoin implements Listener{
 		
 		mapvim.setDisplayName(Main.pr + " §7Mapvoting");
 		mapv.setItemMeta(mapvim);
-		p.getInventory().setItem(0, mapv);
+		p.getInventory().setItem(2, mapv);
 		
 		
 		if(p.hasPermission("pb.start")) {
@@ -136,7 +136,7 @@ public class EVENTjoin implements Listener{
 			
 			mapfim.setDisplayName("§aMap forcing");
 			mapf.setItemMeta(mapfim);
-			p.getInventory().setItem(4, mapf);
+			p.getInventory().setItem(3, mapf);
 		}
 		
 		
