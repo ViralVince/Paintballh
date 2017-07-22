@@ -113,6 +113,15 @@ public class EVENTjoin implements Listener{
 		teamim.setDisplayName(Main.pr + " §7Wähle dein Team");
 		team.setItemMeta(teamim);
 		p.getInventory().setItem(0, team);
+		
+		ItemStack mapv = new ItemStack(Material.BOOK);
+		ItemMeta mapvim = mapv.getItemMeta();
+		
+		mapvim.setDisplayName(Main.pr + " §7Mapvoting");
+		mapv.setItemMeta(mapvim);
+		p.getInventory().setItem(0, mapv);
+		
+		
 		if(p.hasPermission("pb.start")) {
 			ItemStack start = new ItemStack(Material.ANVIL);
 			ItemMeta startim = start.getItemMeta();
@@ -120,6 +129,14 @@ public class EVENTjoin implements Listener{
 			startim.setDisplayName("§aSpiel starten");
 			start.setItemMeta(startim);
 			p.getInventory().setItem(4, start);
+		}
+		if(p.hasPermission("pb.forcemap")) {
+			ItemStack mapf = new ItemStack(Material.BOOK_AND_QUILL);
+			ItemMeta mapfim = mapf.getItemMeta();
+			
+			mapfim.setDisplayName("§aMap forcing");
+			mapf.setItemMeta(mapfim);
+			p.getInventory().setItem(4, mapf);
 		}
 		
 		
