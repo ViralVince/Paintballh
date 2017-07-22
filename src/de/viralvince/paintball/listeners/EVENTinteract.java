@@ -216,6 +216,7 @@ public class EVENTinteract implements Listener{
 					@Override
 					public void run() {
 						
+						
 					
 						for(Entity e : slime.getLocation().getChunk().getEntities()) {
 							if (!(slime.getVelocity().equals(slime.getVelocity().zero()))) { 
