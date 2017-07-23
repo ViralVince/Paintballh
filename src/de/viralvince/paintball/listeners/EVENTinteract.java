@@ -53,6 +53,7 @@ public class EVENTinteract implements Listener{
 				blueim.setLore(bluelore);
 				blue.setItemMeta(blueim);
 				
+				
 				ItemStack red = new ItemStack(Material.WOOL, 1, DyeColor.RED.getData());
 				ItemMeta redim = red.getItemMeta();
 				redim.setDisplayName("§cRot");
@@ -199,7 +200,7 @@ public class EVENTinteract implements Listener{
 				
 				
 				final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.SLIME_BALL));
-				
+				p.playSound(p.getLocation(), Sound.SLIME_WALK, 1, 1);
 			    ((Entity) slime).setVelocity(p.getLocation().getDirection().multiply(1.2D));
 			    
 			    new BukkitRunnable() {
@@ -216,14 +217,14 @@ public class EVENTinteract implements Listener{
 								if(e instanceof Player) {
 									if(!(e == p)) {
 											if(!(Main.getInstance().getRed().contains(p) && Main.getInstance().getRed().contains(e)) || (Main.getInstance().getBlue().contains(p) && Main.getInstance().getBlue().contains(e))) {
-//									  
+								  
 											((Player) e).damage(1.0);
 											
 											if(((Player) e).getHealth() - 1.0 == 0.0) {
 												
 												e.sendMessage(Main.pr + " §cDu wurdest von " + p.getDisplayName() + " §cgetötet.");
 												p.sendMessage(Main.pr + " §aDu hast " + ((Player) e).getDisplayName() + " §rgetötet.");
-//												s
+										
 												
 											}
 									
