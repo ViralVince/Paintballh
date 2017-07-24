@@ -79,6 +79,7 @@ public class CDPB {
 		Integer kit = 0;
 		String UUID = p.getUniqueId().toString();
 		p.getInventory().clear();
+		p.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
 		if(EVENTinventoryclick.Starter.contains(p)) {
 			kit = 1;
 		} else if(EVENTinventoryclick.Enderman.contains(p)) {
@@ -188,17 +189,18 @@ public class CDPB {
 				startersim.setDisplayName("§aSpecial Attack | Light");
 				starters.setItemMeta(startersim);
 				p.getInventory().setItem(8, starters);
+			}
 				
-				p.getScoreboard().clearSlot(DisplaySlot.SIDEBAR);
-				ItemStack rboots = new ItemStack(Material.LEATHER_BOOTS, 1, DyeColor.RED.getData());
-				ItemStack rleggins = new ItemStack(Material.LEATHER_LEGGINGS, 1, DyeColor.RED.getData());
-				ItemStack rchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1, DyeColor.RED.getData());
-				ItemStack rhelm = new ItemStack(Material.LEATHER_HELMET, 1, DyeColor.RED.getData());
+				ItemStack rboots = new ItemStack(Material.LEATHER_BOOTS, 1, (short) 1.0, DyeColor.RED.getData());
+				ItemStack rleggins = new ItemStack(Material.LEATHER_LEGGINGS, 1,(short) 1.0, DyeColor.RED.getData());
+				ItemStack rchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1,(short) 1.0, DyeColor.RED.getData());
+				ItemStack rhelm = new ItemStack(Material.LEATHER_HELMET, 1,(short) 1.0, DyeColor.RED.getData());
 				
-				ItemStack bboots = new ItemStack(Material.LEATHER_BOOTS, 1, DyeColor.BLUE.getData());
-				ItemStack bleggins = new ItemStack(Material.LEATHER_LEGGINGS, 1, DyeColor.BLUE.getData());
-				ItemStack bchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1, DyeColor.BLUE.getData());
-				ItemStack bhelm = new ItemStack(Material.LEATHER_HELMET, 1, DyeColor.BLUE.getData());
+				ItemStack bboots = new ItemStack(Material.LEATHER_BOOTS, 1,(short) 1.0, DyeColor.BLUE.getData());
+				ItemStack bleggins = new ItemStack(Material.LEATHER_LEGGINGS, 1,(short) 1.0, DyeColor.BLUE.getData());
+				ItemStack bchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1,(short) 1.0, DyeColor.BLUE.getData());
+				ItemStack bhelm = new ItemStack(Material.LEATHER_HELMET, 1,(short) 1.0, DyeColor.BLUE.getData());
+				
 				
 				if(Main.red.contains(p)) {
 					p.getInventory().setHelmet(rhelm);
@@ -213,7 +215,7 @@ public class CDPB {
 				}
 				
 			
-		}
+		
 		
 		
 		File file = new File("plugins/paintball/config.yml");
