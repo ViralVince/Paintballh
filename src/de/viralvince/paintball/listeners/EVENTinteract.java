@@ -199,6 +199,12 @@ public class EVENTinteract implements Listener{
 		ItemMeta starterrim = starterr.getItemMeta();
 		starterrim.setDisplayName("§aEnder Gun");
 		starterr.setItemMeta(starterrim);
+		
+		ItemStack startert = new ItemStack(Material.BONE);		
+		ItemMeta startertim = startert.getItemMeta();
+		startertim.setDisplayName("§aDarkness Gun");
+		startert.setItemMeta(startertim);
+		p.getInventory().setItem(0, startert);
 		if(e.getAction() == Action.RIGHT_CLICK_AIR) {
 			if(e.getItem().equals(starter)) {
 				if(!startershot.contains(p)) {
@@ -362,7 +368,109 @@ public class EVENTinteract implements Listener{
 				            
 							if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
 							
-						    p.getWorld().playEffect(slime.getLocation(), Effect.EXTINGUISH, 5);
+						    p.getWorld().playEffect(slime.getLocation(), Effect.PORTAL, 5);
+						    
+						    
+							} else {
+								
+								this.cancel();
+								for(Entity entities : Bukkit.getServer().getWorld(slime.getWorld().getName()).getEntities()) {
+									
+									if(slime.getVelocity().equals(slime.getVelocity().zero())) {
+										if(!(entities instanceof Player)) {
+											
+											entities.remove();
+											
+										}
+										
+									}
+									
+								}
+								
+							}
+						}
+				    	
+				    }.runTaskTimer(Main.getInstance(), 0, 1);
+				    
+				    
+				 
+				    
+				    
+				    startershot.add(p);
+				    
+				    stcool = Bukkit.getScheduler().scheduleSyncDelayedTask(Main.getPlugin(), new Runnable() {
+						
+						@Override
+						public void run() {
+							
+							stcoolsek--;
+							if(stcoolsek == 0) {
+								
+									startershot.remove(p);
+									stcoolsek = 1;
+								
+							}
+							
+							
+							}
+						
+					}, 20);
+				    
+
+		            
+  
+					} else {
+						p.sendMessage(Main.pr + " §cBitte warte einen Moment befor du diese Waffe erneut benutzt!");
+					}
+			}
+			
+			else if(e.getItem().equals(startert)) {
+				if(!startershot.contains(p)) {
+					
+					
+					final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.COAL));
+					p.playSound(p.getLocation(), Sound.DIG_STONE, 1, 1);
+				    ((Entity) slime).setVelocity(p.getLocation().getDirection().multiply(1.2D));
+				    
+				    new BukkitRunnable() {
+				    	
+
+						@Override
+						public void run() {
+							
+							
+						
+							for(Entity e : slime.getLocation().getChunk().getEntities()) {
+								if (!(slime.getVelocity().equals(slime.getVelocity().zero()))) { 
+								if(e.getLocation().distance(slime.getLocation()) < 2.0) {
+									if(e instanceof Player) {
+										if(!(e == p)) {
+												if(!(Main.getInstance().getRed().contains(p) && Main.getInstance().getRed().contains(e)) || (Main.getInstance().getBlue().contains(p) && Main.getInstance().getBlue().contains(e))) {
+									  
+												((Player) e).damage(2.0);
+												
+												if(((Player) e).getHealth()  == 0.0) {
+													
+													e.sendMessage(Main.pr + " §cDu wurdest von " + p.getDisplayName() + " §cgetötet.");
+													p.sendMessage(Main.pr + " §aDu hast " + ((Player) e).getDisplayName() + " §rgetötet.");
+											
+													
+												}
+										
+										
+											}
+										}
+									}
+									}
+									
+									
+								}
+								
+							}
+				            
+							if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
+							
+						    p.getWorld().playEffect(slime.getLocation(), Effect.CLOUD, 5);
 						    
 						    
 							} else {
