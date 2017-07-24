@@ -362,7 +362,7 @@ public class EVENTinteract implements Listener{
 				            
 							if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
 							
-						    p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
+						    p.getWorld().playEffect(slime.getLocation(), Effect.EXTINGUISH, 5);
 						    
 						    
 							} else {

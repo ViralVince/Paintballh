@@ -78,6 +78,7 @@ public class CDPB {
 	public static void spielBeginn(Player p) {
 		Integer kit = 0;
 		String UUID = p.getUniqueId().toString();
+		p.getInventory().clear();
 		if(EVENTinventoryclick.Starter.contains(p)) {
 			kit = 1;
 		} else if(EVENTinventoryclick.Enderman.contains(p)) {
@@ -105,10 +106,11 @@ public class CDPB {
 				EVENTinventoryclick.Light.add(p);
 				kit = 4;
 			}
-			if(kit != 0) {
-				Main.getInstance().getKitapi().setDefaultKit(UUID, kit);
-				}
+			
+				
+				
 		}
+		 Main.getInstance().getKitapi().setDefaultKit(UUID, kit);
 //		if(!EVENTinventoryclick.Starter.contains(p) && !EVENTinventoryclick.Darkness.contains(p) && !EVENTinventoryclick.Enderman.contains(p) && !EVENTinventoryclick.Light.contains(p)) {
 //			if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 1) {
 //				EVENTinventoryclick.Starter.add(p);
