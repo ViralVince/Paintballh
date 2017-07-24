@@ -14,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.player.PlayerEditBookEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -181,6 +182,14 @@ public class EVENTinteract implements Listener{
 				}
 				
 			
+			} else if(p.getItemInHand().getType() == Material.BOOK_AND_QUILL) {
+				e.setCancelled(true);
+				
+				Inventory force = Bukkit.createInventory(null, 9, Main.pr + " §aMap forcen");
+				p.openInventory(force);
+				
+			} else if(p.getItemInHand().getType() == Material.BOOK) {
+				e.setCancelled(true);
 			}
 		}
 		
@@ -633,6 +642,9 @@ public class EVENTinteract implements Listener{
 			
 		}
 	}
+	
+
+
 	}
 	
 	
