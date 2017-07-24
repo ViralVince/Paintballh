@@ -93,32 +93,36 @@ public class CDPB {
 		if(kit != 0) {
 		Main.getInstance().getKitapi().setDefaultKit(UUID, kit);
 		}
-		if(kit == 0) {
+		else if(kit == 0) {
 			if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 1) {
 				EVENTinventoryclick.Starter.add(p);
+				kit = 1;
 			}
-			if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 2) {
+			else if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 2) {
 				EVENTinventoryclick.Enderman.add(p);
+				kit = 2;
 			}
-			if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 3) {
+			else if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 3) {
 				EVENTinventoryclick.Darkness.add(p);
+				kit = 3;
 			}
-			if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 4) {
+			else if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 4) {
 				EVENTinventoryclick.Light.add(p);
+				kit = 4;
 			}
 		}
-		if(!EVENTinventoryclick.Starter.contains(p) && !EVENTinventoryclick.Darkness.contains(p) && !EVENTinventoryclick.Enderman.contains(p) && !EVENTinventoryclick.Light.contains(p)) {
-			if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 1) {
-				EVENTinventoryclick.Starter.add(p);
-			} else if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 2) {
-				EVENTinventoryclick.Enderman.add(p);
-			} else if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 3) {
-				EVENTinventoryclick.Darkness.add(p);
-			} else if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 4) {
-				EVENTinventoryclick.Light.add(p);
-			}
-			
-		}
+//		if(!EVENTinventoryclick.Starter.contains(p) && !EVENTinventoryclick.Darkness.contains(p) && !EVENTinventoryclick.Enderman.contains(p) && !EVENTinventoryclick.Light.contains(p)) {
+//			if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 1) {
+//				EVENTinventoryclick.Starter.add(p);
+//			} else if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 2) {
+//				EVENTinventoryclick.Enderman.add(p);
+//			} else if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 3) {
+//				EVENTinventoryclick.Darkness.add(p);
+//			} else if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 4) {
+//				EVENTinventoryclick.Light.add(p);
+//			}
+//			
+//		}
 		
 		if(!Main.red.contains(p) && !Main.blue.contains(p)) {
 			if(Main.red.size() > Main.blue.size()) {
@@ -132,7 +136,7 @@ public class CDPB {
 			}
 			
 			
-			if(EVENTinventoryclick.Starter.contains(p)) {
+			if(kit == 1) {
 				ItemStack starter = new ItemStack(Material.STICK);		
 				ItemMeta starterim = starter.getItemMeta();
 				starterim.setDisplayName("§aStarter Gun");
@@ -143,9 +147,10 @@ public class CDPB {
 				startersim.setDisplayName("§aSpecial Attack | Starter");
 				starters.setItemMeta(startersim);
 				p.getInventory().setItem(8, starters);
+				p.sendMessage("ok");
 				
 			}		
-			else if(EVENTinventoryclick.Enderman.contains(p)) {
+			else if(kit == 2) {
 				ItemStack starter = new ItemStack(Material.ENDER_PORTAL_FRAME);		
 				ItemMeta starterim = starter.getItemMeta();
 				starterim.setDisplayName("§aEnder Gun");
@@ -158,7 +163,7 @@ public class CDPB {
 				p.getInventory().setItem(8, starters);
 				
 			}	
-			else if(EVENTinventoryclick.Darkness.contains(p)) {
+			else if(kit == 3) {
 				ItemStack starter = new ItemStack(Material.BONE);		
 				ItemMeta starterim = starter.getItemMeta();
 				starterim.setDisplayName("§aDarkness Gun");
@@ -170,7 +175,7 @@ public class CDPB {
 				starters.setItemMeta(startersim);
 				p.getInventory().setItem(8, starters);
 				
-			} else if(EVENTinventoryclick.Light.contains(p)) {
+			} else if(kit == 4) {
 				ItemStack starter = new ItemStack(Material.NETHER_STAR);		
 				ItemMeta starterim = starter.getItemMeta();
 				starterim.setDisplayName("§aLight Gun");
