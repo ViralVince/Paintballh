@@ -187,6 +187,11 @@ public class EVENTinteract implements Listener{
 				e.setCancelled(true);
 				p.closeInventory();
 				Inventory force = Bukkit.createInventory(null, 9, Main.pr + " §aMap forcen");
+				
+				
+				
+				
+				
 				p.openInventory(force);
 				
 			} else if(p.getItemInHand().getType() == Material.BOOK) {
