@@ -80,20 +80,15 @@ public class CDPB {
 		String UUID = p.getUniqueId().toString();
 		if(EVENTinventoryclick.Starter.contains(p)) {
 			kit = 1;
-		}
-		else if(EVENTinventoryclick.Enderman.contains(p)) {
+		} else if(EVENTinventoryclick.Enderman.contains(p)) {
 			kit = 2;
-		}
-		else if(EVENTinventoryclick.Darkness.contains(p)) {
+		} else if(EVENTinventoryclick.Darkness.contains(p)) {
 			kit = 3;
-		}
-		else if(EVENTinventoryclick.Light.contains(p)) {
+		} else if(EVENTinventoryclick.Light.contains(p)) {
 			kit = 4;
 		}
-		if(kit != 0) {
-		Main.getInstance().getKitapi().setDefaultKit(UUID, kit);
-		}
-		else if(kit == 0) {
+		
+		 if(kit == 0) {
 			if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 1) {
 				EVENTinventoryclick.Starter.add(p);
 				kit = 1;
@@ -110,6 +105,9 @@ public class CDPB {
 				EVENTinventoryclick.Light.add(p);
 				kit = 4;
 			}
+			if(kit != 0) {
+				Main.getInstance().getKitapi().setDefaultKit(UUID, kit);
+				}
 		}
 //		if(!EVENTinventoryclick.Starter.contains(p) && !EVENTinventoryclick.Darkness.contains(p) && !EVENTinventoryclick.Enderman.contains(p) && !EVENTinventoryclick.Light.contains(p)) {
 //			if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 1) {
@@ -135,6 +133,8 @@ public class CDPB {
 				Main.red.add(p);													
 			}
 			
+		}
+			
 			
 			if(kit == 1) {
 				ItemStack starter = new ItemStack(Material.STICK);		
@@ -147,7 +147,7 @@ public class CDPB {
 				startersim.setDisplayName("§aSpecial Attack | Starter");
 				starters.setItemMeta(startersim);
 				p.getInventory().setItem(8, starters);
-				p.sendMessage("ok");
+				
 				
 			}		
 			else if(kit == 2) {
@@ -210,7 +210,7 @@ public class CDPB {
 					p.getInventory().setBoots(bboots);
 				}
 				
-			}	
+			
 		}
 		
 		
