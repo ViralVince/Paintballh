@@ -30,6 +30,7 @@ public class EVENTinteract implements Listener{
 	public static int stcoolsek = 1;
 	public static ArrayList<Player> cd = new ArrayList<>();
 	public static ArrayList<Player> startershot = new ArrayList<>();
+	public static ArrayList<Player> mapIce = new ArrayList<>();
 	
 	@EventHandler
 	
@@ -184,7 +185,7 @@ public class EVENTinteract implements Listener{
 			
 			} else if(p.getItemInHand().getType() == Material.BOOK_AND_QUILL) {
 				e.setCancelled(true);
-				
+				p.closeInventory();
 				Inventory force = Bukkit.createInventory(null, 9, Main.pr + " §aMap forcen");
 				p.openInventory(force);
 				
