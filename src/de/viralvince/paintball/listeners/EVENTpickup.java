@@ -11,9 +11,9 @@ public class EVENTpickup implements Listener {
 	
 	@EventHandler
 	public void onPickup(PlayerPickupItemEvent e) {
-		if(Main.gameState == Gamestate.Ingame) {
+		
 			e.setCancelled(true);
-		}
+		
 	}
 
 }
