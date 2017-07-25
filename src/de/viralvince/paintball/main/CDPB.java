@@ -218,22 +218,22 @@ public class CDPB {
 			
 			ItemStack bchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
 			LeatherArmorMeta bch = (LeatherArmorMeta)bchest.getItemMeta();
-			bch.setColor(Color.RED);
+			bch.setColor(Color.BLUE);
 			bchest.setItemMeta(bch);
 			
 			ItemStack blegg = new ItemStack(Material.LEATHER_LEGGINGS, 1);
 			LeatherArmorMeta ble = (LeatherArmorMeta)blegg.getItemMeta();
-			ble.setColor(Color.RED);
+			ble.setColor(Color.BLUE);
 			blegg.setItemMeta(ble);
 			
 			ItemStack bboot = new ItemStack(Material.LEATHER_BOOTS, 1);
 			LeatherArmorMeta bbo = (LeatherArmorMeta)bboot.getItemMeta();
-			bbo.setColor(Color.RED);
+			bbo.setColor(Color.BLUE);
 			bboot.setItemMeta(bbo);
 			
 			ItemStack bHelm = new ItemStack(Material.LEATHER_HELMET, 1);
 			LeatherArmorMeta bhe = (LeatherArmorMeta)bHelm.getItemMeta();
-			bhe.setColor(Color.RED);
+			bhe.setColor(Color.BLUE);
 			bHelm.setItemMeta(bhe);
 			
 //				ItemStack rboots = new ItemStack(Material.LEATHER_BOOTS, 1,  DyeColor.RED.getData());
