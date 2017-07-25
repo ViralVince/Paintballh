@@ -248,16 +248,16 @@ public class EVENTinteract implements Listener{
 								if(e instanceof Player) {
 									if(!(e == p)) {
 											if(!(Main.getInstance().getRed().contains(p) && Main.getInstance().getRed().contains(e)) || (Main.getInstance().getBlue().contains(p) && Main.getInstance().getBlue().contains(e))) {
-								  
+
+												if(((Player) e).getHealth() - 1.0 == 0.0) {
+													
+													Main.getInstance().killed.put((Player) e, p);
+											
+													
+												}
+												
 											((Player) e).damage(1.0);
 											
-											if(((Player) e).getHealth() - 1.0 == 0.0) {
-												
-												e.sendMessage(Main.pr + " §cDu wurdest von " + p.getDisplayName() + " §cgetötet.");
-												p.sendMessage(Main.pr + " §aDu hast " + ((Player) e).getDisplayName() + " §rgetötet.");
-										
-												
-											}
 									
 									
 										}
