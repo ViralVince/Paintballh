@@ -5,6 +5,7 @@ import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -62,6 +63,7 @@ public class Main extends JavaPlugin implements Listener {
 	public static ArrayList<Player> red = new ArrayList<>();
 	public static ArrayList<Player> blue = new ArrayList<>();
 	public static ArrayList<Player> spattack = new ArrayList<>();
+	public static HashMap<Player, Player> killed = new HashMap<Player, Player>();
 	
 	public  CoinsAPI getCoinsapi() { 
 		return this.coinsApi;

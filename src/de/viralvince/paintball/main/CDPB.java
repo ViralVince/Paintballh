@@ -1,7 +1,9 @@
 package de.viralvince.paintball.main;
 
 import java.io.File;
+
 import org.bukkit.Bukkit;
+import org.bukkit.Color;
 import org.bukkit.DyeColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -10,6 +12,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.scoreboard.DisplaySlot;
 
 import de.viralvince.paintball.listeners.EVENTinventoryclick;
@@ -191,27 +194,69 @@ public class CDPB {
 				p.getInventory().setItem(8, starters);
 			}
 				
-				ItemStack rboots = new ItemStack(Material.LEATHER_BOOTS, 1,  DyeColor.RED.getData());
-				ItemStack rleggins = new ItemStack(Material.LEATHER_LEGGINGS, 1, DyeColor.RED.getData());
-				ItemStack rchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1, DyeColor.RED.getData());
-				ItemStack rhelm = new ItemStack(Material.LEATHER_HELMET, 1, DyeColor.RED.getData());
-				
-				ItemStack bboots = new ItemStack(Material.LEATHER_BOOTS, 1, DyeColor.BLUE.getData());
-				ItemStack bleggins = new ItemStack(Material.LEATHER_LEGGINGS, 1, DyeColor.BLUE.getData());
-				ItemStack bchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1, DyeColor.BLUE.getData());
-				ItemStack bhelm = new ItemStack(Material.LEATHER_HELMET, 1, DyeColor.BLUE.getData());
+			ItemStack rchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
+			LeatherArmorMeta rch = (LeatherArmorMeta)rchest.getItemMeta();
+			rch.setColor(Color.RED);
+			rchest.setItemMeta(rch);
+			
+			ItemStack rlegg = new ItemStack(Material.LEATHER_LEGGINGS, 1);
+			LeatherArmorMeta rle = (LeatherArmorMeta)rlegg.getItemMeta();
+			rle.setColor(Color.RED);
+			rlegg.setItemMeta(rle);
+			
+			ItemStack rboot = new ItemStack(Material.LEATHER_BOOTS, 1);
+			LeatherArmorMeta rbo = (LeatherArmorMeta)rboot.getItemMeta();
+			rbo.setColor(Color.RED);
+			rboot.setItemMeta(rbo);
+			
+			ItemStack rHelm = new ItemStack(Material.LEATHER_HELMET, 1);
+			LeatherArmorMeta rhe = (LeatherArmorMeta)rHelm.getItemMeta();
+			rhe.setColor(Color.RED);
+			rHelm.setItemMeta(rhe);
+			
+			
+			
+			ItemStack bchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1);
+			LeatherArmorMeta bch = (LeatherArmorMeta)bchest.getItemMeta();
+			bch.setColor(Color.RED);
+			bchest.setItemMeta(bch);
+			
+			ItemStack blegg = new ItemStack(Material.LEATHER_LEGGINGS, 1);
+			LeatherArmorMeta ble = (LeatherArmorMeta)blegg.getItemMeta();
+			ble.setColor(Color.RED);
+			blegg.setItemMeta(ble);
+			
+			ItemStack bboot = new ItemStack(Material.LEATHER_BOOTS, 1);
+			LeatherArmorMeta bbo = (LeatherArmorMeta)bboot.getItemMeta();
+			bbo.setColor(Color.RED);
+			bboot.setItemMeta(bbo);
+			
+			ItemStack bHelm = new ItemStack(Material.LEATHER_HELMET, 1);
+			LeatherArmorMeta bhe = (LeatherArmorMeta)bHelm.getItemMeta();
+			bhe.setColor(Color.RED);
+			bHelm.setItemMeta(bhe);
+			
+//				ItemStack rboots = new ItemStack(Material.LEATHER_BOOTS, 1,  DyeColor.RED.getData());
+//				ItemStack rleggins = new ItemStack(Material.LEATHER_LEGGINGS, 1, DyeColor.RED.getData());
+//				ItemStack rchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1, DyeColor.RED.getData());
+//				ItemStack rhelm = new ItemStack(Material.LEATHER_HELMET, 1, DyeColor.RED.getData());
+//				
+//				ItemStack bboots = new ItemStack(Material.LEATHER_BOOTS, 1, DyeColor.BLUE.getData());
+//				ItemStack bleggins = new ItemStack(Material.LEATHER_LEGGINGS, 1, DyeColor.BLUE.getData());
+//				ItemStack bchest = new ItemStack(Material.LEATHER_CHESTPLATE, 1, DyeColor.BLUE.getData());
+//				ItemStack bhelm = new ItemStack(Material.LEATHER_HELMET, 1, DyeColor.BLUE.getData());
 				
 				
 				if(Main.red.contains(p)) {
-					p.getInventory().setHelmet(rhelm);
+					p.getInventory().setHelmet(rHelm);
 					p.getInventory().setChestplate(rchest);
-					p.getInventory().setLeggings(rleggins);
-					p.getInventory().setBoots(rboots);
+					p.getInventory().setLeggings(rlegg);
+					p.getInventory().setBoots(rboot);
 				} else if(Main.blue.contains(p)) {
-					p.getInventory().setHelmet(bhelm);
+					p.getInventory().setHelmet(bHelm);
 					p.getInventory().setChestplate(bchest);
-					p.getInventory().setLeggings(bleggins);
-					p.getInventory().setBoots(bboots);
+					p.getInventory().setLeggings(blegg);
+					p.getInventory().setBoots(bboot);
 				}
 				
 			
