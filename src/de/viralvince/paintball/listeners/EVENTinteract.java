@@ -204,6 +204,7 @@ public class EVENTinteract implements Listener{
 	
 	@EventHandler
 	public void onInteract(PlayerInteractEvent e) {
+		if(Main.gameState == Gamestate.Ingame) {
 		Player p = e.getPlayer();
 		ItemStack starter = new ItemStack(Material.STICK);		
 		ItemMeta starterim = starter.getItemMeta();
@@ -228,7 +229,7 @@ public class EVENTinteract implements Listener{
 		if(e.getAction() == Action.RIGHT_CLICK_AIR) {
 			if(e.getItem().equals(starter)) {
 				if(!startershot.contains(p)) {
-				
+			
 				
 				final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.SLIME_BALL));
 				p.playSound(p.getLocation(), Sound.SLIME_WALK, 1, 1);
@@ -646,6 +647,7 @@ public class EVENTinteract implements Listener{
 					}
 			}
 			
+		}
 		}
 	}
 	
