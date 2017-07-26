@@ -441,7 +441,7 @@ public class EVENTinteract implements Listener{
 		            
   
 					} else {
-						p.sendMessage(Main.pr + " §cBitte warte einen Moment befor du diese Waffe erneut benutzt!");
+						p.sendMessage(Main.pr + " §cBitte warte einen Moment bevor du diese Waffe erneut benutzt!");
 					}
 			}
 			
