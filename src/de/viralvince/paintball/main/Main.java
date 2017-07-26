@@ -63,7 +63,8 @@ public class Main extends JavaPlugin implements Listener {
 	public static ArrayList<Player> red = new ArrayList<>();
 	public static ArrayList<Player> blue = new ArrayList<>();
 	public static ArrayList<Player> spattack = new ArrayList<>();
-	public static HashMap<Player, Player> killed = new HashMap<Player, Player>();
+	public HashMap<Player, Player> killed = new HashMap<Player, Player>();
+	public ArrayList<Player> slime = new ArrayList<Player>();
 	
 	public  CoinsAPI getCoinsapi() { 
 		return this.coinsApi;

@@ -271,7 +271,7 @@ public class EVENTinteract implements Listener{
 							
 						}
 			            
-						if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
+						if (!(slime.isOnGround() == true)) { 	
 						
 					    p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
 					    
@@ -279,18 +279,7 @@ public class EVENTinteract implements Listener{
 						} else {
 							
 							this.cancel();
-							for(Entity entities : Bukkit.getServer().getWorld(slime.getWorld().getName()).getEntities()) {
-								
-								if(slime.getVelocity().equals(slime.getVelocity().zero())) {
-									if(!(entities instanceof Player)) {
-										
-										entities.remove();
-										
-									}
-									
-								}
-								
-							}
+							slime.remove();
 							
 						}
 					}
