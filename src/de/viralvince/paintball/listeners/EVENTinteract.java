@@ -376,28 +376,17 @@ public class EVENTinteract implements Listener{
 								
 							}
 				            
-							if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
-							
-						    p.getWorld().playEffect(slime.getLocation(), Effect.PORTAL, 5);
-						    
-						    
-							} else {
+							if (!(slime.isOnGround() == true)) { 	
 								
-								this.cancel();
-								for(Entity entities : Bukkit.getServer().getWorld(slime.getWorld().getName()).getEntities()) {
+							    p.getWorld().playEffect(slime.getLocation(), Effect.PORTAL, 5);
+							    
+							    
+								} else {
 									
-									if(slime.getVelocity().equals(slime.getVelocity().zero())) {
-										if(!(entities instanceof Player)) {
-											
-											entities.remove();
-											
-										}
-										
-									}
+									this.cancel();
+									slime.remove();
 									
 								}
-								
-							}
 						}
 				    	
 				    }.runTaskTimer(Main.getInstance(), 0, 1);
@@ -478,28 +467,17 @@ public class EVENTinteract implements Listener{
 								
 							}
 				            
-							if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
-							
-						    p.getWorld().playEffect(slime.getLocation(), Effect.CRIT, 5);
-						    
-						    
-							} else {
+							if (!(slime.isOnGround() == true)) { 	
 								
-								this.cancel();
-								for(Entity entities : Bukkit.getServer().getWorld(slime.getWorld().getName()).getEntities()) {
+							    p.getWorld().playEffect(slime.getLocation(), Effect.CRIT, 5);
+							    
+							    
+								} else {
 									
-									if(slime.getVelocity().equals(slime.getVelocity().zero())) {
-										if(!(entities instanceof Player)) {
-											
-											entities.remove();
-											
-										}
-										
-									}
+									this.cancel();
+									slime.remove();
 									
 								}
-								
-							}
 						}
 				    	
 				    }.runTaskTimer(Main.getInstance(), 0, 1);
@@ -578,28 +556,17 @@ public class EVENTinteract implements Listener{
 								
 							}
 				            
-							if (!(slime.getVelocity().equals(slime.getVelocity().zero()))){ 	
-							
-						    p.getWorld().playEffect(slime.getLocation(), Effect.CLOUD, 5);
-						    
-						    
-							} else {
+							if (!(slime.isOnGround() == true)) { 	
 								
-								this.cancel();
-								for(Entity entities : Bukkit.getServer().getWorld(slime.getWorld().getName()).getEntities()) {
+							    p.getWorld().playEffect(slime.getLocation(), Effect.CLOUD, 5);
+							    
+							    
+								} else {
 									
-									if(slime.getVelocity().equals(slime.getVelocity().zero())) {
-										if(!(entities instanceof Player)) {
-											
-											entities.remove();
-											
-										}
-										
-									}
+									this.cancel();
+									slime.remove();
 									
 								}
-								
-							}
 						}
 				    	
 				    }.runTaskTimer(Main.getInstance(), 0, 1);
