@@ -46,7 +46,7 @@ public class Main extends JavaPlugin implements Listener {
 	private KitAPI kitApi;
 	
 	
-	  
+	//p.getWorld().strikeLightning(loc);
 	private static Main plugin;
 	public static final String pr = "§5Paintball §7>>";
 	

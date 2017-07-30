@@ -92,7 +92,6 @@ public class CDPB {
 		} else if(EVENTinventoryclick.Light.contains(p)) {
 			kit = 4;
 		}
-		
 		 if(kit == 0) {
 			if(Main.getInstance().getKitapi().getDefaultKit(UUID) == 1) {
 				EVENTinventoryclick.Starter.add(p);
