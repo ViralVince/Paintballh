@@ -28,6 +28,8 @@ public class EVENTinteract implements Listener{
 	public static int coolsek = 5;
 	public static int stcool;
 	public static int stcoolsek = 1;
+	public static int spcool;
+	public static int spcoolsek = 30;
 	public static ArrayList<Player> cd = new ArrayList<>();
 	public static ArrayList<Player> startershot = new ArrayList<>();
 	public static ArrayList<Player> map1 = new ArrayList<>();
@@ -613,22 +615,50 @@ public class EVENTinteract implements Listener{
 	public void onInt1(PlayerInteractEvent e){
 	 if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {
 		 if(Main.gameState == Gamestate.Ingame){
-			 ItemStack starters = new ItemStack(Material.WOOL);		
-				ItemMeta startersim = starters.getItemMeta();
-				startersim.setDisplayName("§aSpecial Attack | Starter");
-				starters.setItemMeta(startersim);
-				ItemStack ends = new ItemStack(Material.WOOL);		
-				ItemMeta endsim = ends.getItemMeta();
-				endsim.setDisplayName("§aSpecial Attack | Enderman");
-				ends.setItemMeta(endsim);
-				ItemStack startersr = new ItemStack(Material.WOOL);		
-				ItemMeta startersrim = startersr.getItemMeta();
-				startersrim.setDisplayName("§aSpecial Attack | Darkness");
-				startersr.setItemMeta(startersrim);
-				ItemStack starterst = new ItemStack(Material.WOOL);		
-				ItemMeta starterstim = starterst.getItemMeta();
-				starterstim.setDisplayName("§aSpecial Attack | Light");
-				starterst.setItemMeta(starterstim);
+			  Player p = e.getPlayer();
+				  	ItemStack starters = new ItemStack(Material.WOOL);		
+					ItemMeta startersim = starters.getItemMeta();
+					startersim.setDisplayName("§aSpecial Attack | Starter");
+					starters.setItemMeta(startersim);
+					ItemStack ends = new ItemStack(Material.WOOL);		
+					ItemMeta endsim = ends.getItemMeta();
+					endsim.setDisplayName("§aSpecial Attack | Enderman");
+					ends.setItemMeta(endsim);
+					ItemStack startersr = new ItemStack(Material.WOOL);		
+					ItemMeta startersrim = startersr.getItemMeta();
+					startersrim.setDisplayName("§aSpecial Attack | Darkness");
+					startersr.setItemMeta(startersrim);
+					ItemStack starterst = new ItemStack(Material.WOOL);		
+					ItemMeta starterstim = starterst.getItemMeta();
+					starterstim.setDisplayName("§aSpecial Attack | Light");
+					starterst.setItemMeta(starterstim);
+					
+				if(e.getPlayer().getItemInHand().equals(starters)) {
+					if(!sStarter.contains(p)) {
+						sStarter.add(p);
+						
+						
+						spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+							
+							@Override
+							public void run() {
+								p.setLevel(spcoolsek);
+								spcoolsek--;
+								if(spcoolsek == 0) {
+									
+										sStarter.remove(p);
+									
+								}
+								
+								
+								
+								}
+							
+						}, 0, 20*30);
+						
+					
+					}
+				}
 				
 				
 
