@@ -30,8 +30,11 @@ public class EVENTinteract implements Listener{
 	public static int stcoolsek = 1;
 	public static ArrayList<Player> cd = new ArrayList<>();
 	public static ArrayList<Player> startershot = new ArrayList<>();
-	public static ArrayList<Player> mapIce = new ArrayList<>();
-	
+	public static ArrayList<Player> map1 = new ArrayList<>();
+	public static ArrayList<Player> sStarter = new ArrayList<>();
+	public static ArrayList<Player> sEnderman = new ArrayList<>();
+	public static ArrayList<Player> sDarknes = new ArrayList<>();
+	public static ArrayList<Player> sLight = new ArrayList<>();
 	@EventHandler
 	
 	public void onInt(PlayerInteractEvent e)  {
@@ -607,9 +610,33 @@ public class EVENTinteract implements Listener{
 		}
 	}
 	
+	public void onInt1(PlayerInteractEvent e){
+	 if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {
+		 if(Main.gameState == Gamestate.Ingame){
+			 ItemStack starters = new ItemStack(Material.WOOL);		
+				ItemMeta startersim = starters.getItemMeta();
+				startersim.setDisplayName("§aSpecial Attack | Starter");
+				starters.setItemMeta(startersim);
+				ItemStack ends = new ItemStack(Material.WOOL);		
+				ItemMeta endsim = ends.getItemMeta();
+				endsim.setDisplayName("§aSpecial Attack | Enderman");
+				ends.setItemMeta(endsim);
+				ItemStack startersr = new ItemStack(Material.WOOL);		
+				ItemMeta startersrim = startersr.getItemMeta();
+				startersrim.setDisplayName("§aSpecial Attack | Darkness");
+				startersr.setItemMeta(startersrim);
+				ItemStack starterst = new ItemStack(Material.WOOL);		
+				ItemMeta starterstim = starterst.getItemMeta();
+				starterstim.setDisplayName("§aSpecial Attack | Light");
+				starterst.setItemMeta(starterstim);
+				
+				
 
-
+		 	}		 
+	 	}		
 	}
+	
+}
 	
 	
 	
