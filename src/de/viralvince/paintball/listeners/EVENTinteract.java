@@ -612,6 +612,7 @@ public class EVENTinteract implements Listener{
 		}
 	}
 	
+	@EventHandler
 	public void onInt1(PlayerInteractEvent e){
 	 if(e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.LEFT_CLICK_AIR || e.getAction() == Action.LEFT_CLICK_BLOCK) {
 		 if(Main.gameState == Gamestate.Ingame){
