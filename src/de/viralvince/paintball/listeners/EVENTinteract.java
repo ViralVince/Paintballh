@@ -634,7 +634,7 @@ public class EVENTinteract implements Listener{
 					starterst.setItemMeta(starterstim);
 					
 				if(p.getItemInHand().equals(starters)) {
-					p.sendMessage("g");
+					
 					if(!sStarter.contains(p)) {
 						sStarter.add(p);
 						
