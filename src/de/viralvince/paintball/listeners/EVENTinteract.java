@@ -657,6 +657,8 @@ public class EVENTinteract implements Listener{
 						}, 0, 20*30);
 						
 					
+					} else {
+						p.sendMessage(Main.pr+ " §cWarte noch §6" + spcoolsek + " §cSekunden befor du die Spezialattacke erneut einsetzen kannst!");
 					}
 				}
 				
