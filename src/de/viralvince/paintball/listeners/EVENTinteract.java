@@ -633,7 +633,8 @@ public class EVENTinteract implements Listener{
 					starterstim.setDisplayName("§aSpecial Attack | Light");
 					starterst.setItemMeta(starterstim);
 					
-				if(e.getPlayer().getItemInHand().equals(starters)) {
+				if(p.getItemInHand().equals(starters)) {
+					p.sendMessage("g");
 					if(!sStarter.contains(p)) {
 						sStarter.add(p);
 						
@@ -654,7 +655,7 @@ public class EVENTinteract implements Listener{
 								
 								}
 							
-						}, 0, 20*30);
+						}, 0, 1);
 						
 					
 					} else {
