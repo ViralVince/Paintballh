@@ -649,14 +649,14 @@ public class EVENTinteract implements Listener{
 								if(spcoolsek == 0) {
 									
 										sStarter.remove(p);
-									
+										Bukkit.getScheduler().cancelTask(spcool);  
 								}
 								
 								
 								
 								}
 							
-						}, 0, 1);
+						}, 0, 20);
 						
 					
 					} else {
