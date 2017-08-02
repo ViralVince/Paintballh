@@ -649,7 +649,8 @@ public class EVENTinteract implements Listener{
 								if(spcoolsek == 0) {
 									
 										sStarter.remove(p);
-										Bukkit.getScheduler().cancelTask(spcool);  
+										Bukkit.getScheduler().cancelTask(spcool);
+										
 								}
 								
 								
