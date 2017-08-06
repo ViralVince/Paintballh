@@ -16,7 +16,7 @@ public class EVENTquit implements Listener {
 
 	
 	@EventHandler
-	public void onquit(PlayerQuitEvent e) {
+	public void onQuit(PlayerQuitEvent e) {
 		
 		File file = new File("plugins/paintball/config.yml");
 		YamlConfiguration cfg = YamlConfiguration.loadConfiguration(file);

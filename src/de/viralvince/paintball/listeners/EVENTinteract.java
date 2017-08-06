@@ -14,7 +14,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerEditBookEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -33,6 +32,8 @@ public class EVENTinteract implements Listener{
 	public static ArrayList<Player> cd = new ArrayList<>();
 	public static ArrayList<Player> startershot = new ArrayList<>();
 	public static ArrayList<Player> map1 = new ArrayList<>();
+	public static ArrayList<Player> map2 = new ArrayList<>();
+	public static ArrayList<Player> map3 = new ArrayList<>();
 	public static ArrayList<Player> sStarter = new ArrayList<>();
 	public static ArrayList<Player> sEnderman = new ArrayList<>();
 	public static ArrayList<Player> sDarknes = new ArrayList<>();
@@ -125,7 +126,7 @@ public class EVENTinteract implements Listener{
 					List<String> stlore = new ArrayList<String>();
 					stlore.add("§7Das einfache Starter Kit");
 					stlore.add("§7Schaden: Ein halbes Hertz pro Treffer");
-					stlore.add("§7Specialattack: Schiesst mit vielen Kugeln um sich");
+					stlore.add("§7Specialattack: Schiesst viele kugeln für 5 sekunden");
 					Starterim.setDisplayName("§aStarter (gekauft)");
 					Starterim.setLore(stlore);
 					Starter.setItemMeta(Starterim);
@@ -647,9 +648,10 @@ public class EVENTinteract implements Listener{
 								p.setLevel(spcoolsek);
 								spcoolsek--;
 								if(spcoolsek == 0) {
-									
+										p.setLevel(0);
 										sStarter.remove(p);
 										Bukkit.getScheduler().cancelTask(spcool);
+										spcoolsek = 30;
 										
 								}
 								
@@ -663,6 +665,34 @@ public class EVENTinteract implements Listener{
 					} else {
 						p.sendMessage(Main.pr+ " §cWarte noch §6" + spcoolsek + " §cSekunden befor du die Spezialattacke erneut einsetzen kannst!");
 					}
+				} else if(p.getItemInHand().equals(ends)) {
+					if(!sEnderman.contains(p)) {
+						sEnderman.add(p);
+						
+					spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+
+							@Override
+							public void run() {
+								p.setLevel(spcoolsek);
+								spcoolsek--;
+								if(spcoolsek == 0) {
+									
+										sEnderman.remove(p);
+										Bukkit.getScheduler().cancelTask(spcool);
+									
+								}
+								
+								
+								
+								}
+							
+						}, 0, 20);
+						
+					
+					} else {
+						p.sendMessage(Main.pr+ " §cWarte noch §6" + spcoolsek + " §cSekunden befor du die Spezialattacke erneut einsetzen kannst!");
+					}
+			
 				}
 				
 				
