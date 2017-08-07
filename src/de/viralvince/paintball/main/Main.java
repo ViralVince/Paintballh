@@ -53,8 +53,7 @@ public class Main extends JavaPlugin implements Listener {
 	File file = new File("plugins/paintball/config.yml");
 	YamlConfiguration cfg = YamlConfiguration.loadConfiguration(file);
 	
-	public int maxplayers = cfg.getInt("Minplayers");
-	public int minplayers = cfg.getInt("Minplayers");
+
 	
 	public static Gamestate gameState = Gamestate.Lobby;
 	
