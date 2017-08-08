@@ -679,7 +679,7 @@ public class EVENTinteract implements Listener{
 									
 										sEnderman.remove(p);
 										Bukkit.getScheduler().cancelTask(spcool);
-									
+										spcoolsek = 30;
 								}
 								
 								
