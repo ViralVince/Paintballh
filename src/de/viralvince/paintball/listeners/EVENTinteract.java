@@ -30,9 +30,9 @@ public class EVENTinteract implements Listener{
 	public static int spcool;
 	public static int spcoolsek = 30;
 	public static int startcool;
-	public static int startcoolsek = 5;
+	public static int startcoolsek = 20;
 	public static int startcool1;
-	public static int startcoolsek1 = 5;
+	public static int startcoolsek1 = 20;
 	public static ArrayList<Player> cd = new ArrayList<>();
 	public static ArrayList<Player> startershot = new ArrayList<>();
 	public static ArrayList<Player> map1 = new ArrayList<>();
@@ -703,7 +703,7 @@ public class EVENTinteract implements Listener{
 													startcoolsek1 --;
 													if(startcoolsek1 == 0) {
 														Bukkit.getScheduler().cancelTask(startcool1);
-														startcoolsek1 = 5;
+														startcoolsek1 = 20;
 													}
 													p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
 												}
