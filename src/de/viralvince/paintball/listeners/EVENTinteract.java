@@ -30,7 +30,7 @@ public class EVENTinteract implements Listener{
 	public static int spcool;
 	public static int spcoolsek = 30;
 	public static int startcool;
-	public static int startcoolsek = 30;
+	public static int startcoolsek = 5;
 	public static ArrayList<Player> cd = new ArrayList<>();
 	public static ArrayList<Player> startershot = new ArrayList<>();
 	public static ArrayList<Player> map1 = new ArrayList<>();
@@ -641,8 +641,143 @@ public class EVENTinteract implements Listener{
 						
 						if(!sStarter.contains(p)) {
 							sStarter.add(p);
+							final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.SLIME_BALL));
+							startcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+								@Override
+								public void run() {
+									
+									p.playSound(p.getLocation(), Sound.SLIME_WALK, 1, 1);
+									((Entity) slime).setVelocity(p.getLocation().getDirection().multiply(1.2D));
+									startcoolsek --;
+									if(startcoolsek == 0) {
+										Bukkit.getScheduler().cancelTask(startcool);
+										startcoolsek = 5;
+									}
+									
+								}
+							}, 0, 5);
+								new BukkitRunnable() {
+							    	
+	
+									@Override
+									public void run() {
+									
+									
+									
+										for(Entity e : slime.getLocation().getChunk().getEntities()) {
+											if (!(slime.getVelocity().equals(slime.getVelocity().zero()))) { 
+											if(e.getLocation().distance(slime.getLocation()) < 2.0) {
+												if(e instanceof Player) {
+													if(!(e == p)) {
+															if(!(Main.getInstance().getRed().contains(p) && Main.getInstance().getRed().contains(e)) || (Main.getInstance().getBlue().contains(p) && Main.getInstance().getBlue().contains(e))) {
+	
+																if(((Player) e).getHealth() - 1.0 == 0.0) {
+																	
+																	Main.getInstance().killed.put((Player) e, p);															
+																
+																}
+																
+															((Player) e).damage(1.0);
+															
+													
+													
+														}
+													}
+												}
+												}
+												
+												
+											}
+										
+										}
+							            
+										if (!(slime.isOnGround() == true)) { 	
+										
+									    p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
+									    
+									    
+										} else {
+											
+											this.cancel();
+											slime.remove();
+											
+									}
+									}
+							    	
+							    }.runTaskTimer(Main.getInstance(), 0, 1);
+							    
+									
+									
+									
+								
 							
 							
+							
+							
+//							final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.SLIME_BALL));
+//							p.playSound(p.getLocation(), Sound.SLIME_WALK, 1, 1);
+//						    ((Entity) slime).setVelocity(p.getLocation().getDirection().multiply(1.2D));
+//						    
+//						    new BukkitRunnable() {
+//						    	
+//
+//								@Override
+//								public void run() {
+//									
+//									
+//								
+//									for(Entity e : slime.getLocation().getChunk().getEntities()) {
+//										if (!(slime.getVelocity().equals(slime.getVelocity().zero()))) { 
+//										if(e.getLocation().distance(slime.getLocation()) < 2.0) {
+//											if(e instanceof Player) {
+//												if(!(e == p)) {
+//														if(!(Main.getInstance().getRed().contains(p) && Main.getInstance().getRed().contains(e)) || (Main.getInstance().getBlue().contains(p) && Main.getInstance().getBlue().contains(e))) {
+//
+//															if(((Player) e).getHealth() - 1.0 == 0.0) {
+//																
+//																Main.getInstance().killed.put((Player) e, p);
+//														
+//																
+//															}
+//															
+//														((Player) e).damage(1.0);
+//														
+//												
+//												
+//													}
+//												}
+//											}
+//											}
+//											
+//											
+//										}
+//										
+//									}
+//						            
+//									if (!(slime.isOnGround() == true)) { 	
+//									
+//								    p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
+//								    
+//								    
+//									} else {
+//										
+//										this.cancel();
+//										slime.remove();
+//										
+//									}
+//								}
+//						    	
+//						    }.runTaskTimer(Main.getInstance(), 0, 1);
+//						    
+//						    
+//						 
+//						    
+//						    
+//						    
+//						    
+//						    
+							
+							//___________________________________________
 							spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
 								
 								@Override
@@ -667,6 +802,7 @@ public class EVENTinteract implements Listener{
 						} else {
 							p.sendMessage(Main.pr+ " §cWarte noch §6" + spcoolsek + " §cSekunden befor du die Spezialattacke erneut einsetzen kannst!");
 						}
+						//____________________________________________
 					} else if(p.getItemInHand().equals(ends)) {
 						if(!sEnderman.contains(p)) {
 							
