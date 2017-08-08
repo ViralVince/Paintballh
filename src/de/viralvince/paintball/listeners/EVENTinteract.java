@@ -701,10 +701,11 @@ public class EVENTinteract implements Listener{
 															startcoolsek1 = 20;
 														}
 														if (!(slime.isOnGround() == true)) {
-															if(slime.getFallDistance() <= 0)
+															if(slime.getFallDistance() <= 0) {
 														p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
 															
 													}
+														}
 													}
 												}, 0, 5);
 										    
