@@ -667,6 +667,10 @@ public class EVENTinteract implements Listener{
 					}
 				} else if(p.getItemInHand().equals(ends)) {
 					if(!sEnderman.contains(p)) {
+						
+						
+						
+						
 						sEnderman.add(p);
 						
 					spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
@@ -676,7 +680,7 @@ public class EVENTinteract implements Listener{
 								p.setLevel(spcoolsek);
 								spcoolsek--;
 								if(spcoolsek == 0) {
-									
+										
 										sEnderman.remove(p);
 										Bukkit.getScheduler().cancelTask(spcool);
 										spcoolsek = 30;
