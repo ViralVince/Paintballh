@@ -637,77 +637,77 @@ public class EVENTinteract implements Listener{
 					starterstim.setDisplayName("§aSpecial Attack | Light");
 					starterst.setItemMeta(starterstim);
 					
-				if(p.getItemInHand().equals(starters)) {
-					
-					if(!sStarter.contains(p)) {
-						sStarter.add(p);
+					if(p.getItemInHand().equals(starters)) {
 						
+						if(!sStarter.contains(p)) {
+							sStarter.add(p);
+							
+							
+							spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+								
+								@Override
+								public void run() {
+									p.setLevel(spcoolsek);
+									spcoolsek--;
+									if(spcoolsek == 0) {
+											p.setLevel(0);
+											sStarter.remove(p);
+											Bukkit.getScheduler().cancelTask(spcool);
+											spcoolsek = 30;
+											
+									}
+									
+									
+									
+									}
+								
+							}, 0, 20);
+							
 						
+						} else {
+							p.sendMessage(Main.pr+ " §cWarte noch §6" + spcoolsek + " §cSekunden befor du die Spezialattacke erneut einsetzen kannst!");
+						}
+					} else if(p.getItemInHand().equals(ends)) {
+						if(!sEnderman.contains(p)) {
+							
+							
+							
+							
+							sEnderman.add(p);
+							
 						spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
-							
-							@Override
-							public void run() {
-								p.setLevel(spcoolsek);
-								spcoolsek--;
-								if(spcoolsek == 0) {
-										p.setLevel(0);
-										sStarter.remove(p);
-										Bukkit.getScheduler().cancelTask(spcool);
-										spcoolsek = 30;
-										
-								}
-								
-								
-								
-								}
-							
-						}, 0, 20);
-						
-					
-					} else {
-						p.sendMessage(Main.pr+ " §cWarte noch §6" + spcoolsek + " §cSekunden befor du die Spezialattacke erneut einsetzen kannst!");
-					}
-				} else if(p.getItemInHand().equals(ends)) {
-					if(!sEnderman.contains(p)) {
-						
-						
-						
-						
-						sEnderman.add(p);
-						
-					spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
 
-							@Override
-							public void run() {
-								p.setLevel(spcoolsek);
-								spcoolsek--;
-								if(spcoolsek == 0) {
-										
-										sEnderman.remove(p);
-										Bukkit.getScheduler().cancelTask(spcool);
-										spcoolsek = 30;
-								}
+								@Override
+								public void run() {
+									p.setLevel(spcoolsek);
+									spcoolsek--;
+									if(spcoolsek == 0) {
+											
+											sEnderman.remove(p);
+											Bukkit.getScheduler().cancelTask(spcool);
+											spcoolsek = 30;
+									}
+									
+									
+									
+									}
 								
-								
-								
-								}
+							}, 0, 20);
 							
-						}, 0, 20);
 						
-					
-					} else {
-						p.sendMessage(Main.pr+ " §cWarte noch §6" + spcoolsek + " §cSekunden befor du die Spezialattacke erneut einsetzen kannst!");
+						} else {
+							p.sendMessage(Main.pr+ " §cWarte noch §6" + spcoolsek + " §cSekunden befor du die Spezialattacke erneut einsetzen kannst!");
+						}
+				
 					}
-			
-				}
-				
-				
+					
+					
 
-		 	}		 
-	 	}		
+			 	}		 
+		 	}		
+		}
+		
 	}
-	
-}
-	
-	
-	
+		
+		
+		
