@@ -31,6 +31,8 @@ public class EVENTinteract implements Listener{
 	public static int spcoolsek = 30;
 	public static int startcool;
 	public static int startcoolsek = 5;
+	public static int startcool1;
+	public static int startcoolsek1 = 5;
 	public static ArrayList<Player> cd = new ArrayList<>();
 	public static ArrayList<Player> startershot = new ArrayList<>();
 	public static ArrayList<Player> map1 = new ArrayList<>();
@@ -692,8 +694,21 @@ public class EVENTinteract implements Listener{
 										}
 							            
 										if (!(slime.isOnGround() == true)) { 	
-										
-									    p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
+											startcool1 = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+												@Override
+												public void run() {
+													
+													
+													
+													startcoolsek1 --;
+													if(startcoolsek1 == 0) {
+														Bukkit.getScheduler().cancelTask(startcool1);
+														startcoolsek1 = 5;
+													}
+													p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
+												}
+											}, 0, 5);
+									    
 									    
 									    
 										} else {
