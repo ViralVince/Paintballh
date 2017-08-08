@@ -29,6 +29,8 @@ public class EVENTinteract implements Listener{
 	public static int stcoolsek = 1;
 	public static int spcool;
 	public static int spcoolsek = 30;
+	public static int startcool;
+	public static int startcoolsek = 30;
 	public static ArrayList<Player> cd = new ArrayList<>();
 	public static ArrayList<Player> startershot = new ArrayList<>();
 	public static ArrayList<Player> map1 = new ArrayList<>();
