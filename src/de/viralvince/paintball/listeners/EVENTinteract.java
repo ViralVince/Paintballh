@@ -18,6 +18,9 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+import org.bukkit.potion.PotionType;
 import org.bukkit.scheduler.BukkitRunnable;
 import de.viralvince.paintball.main.Gamestate;
 import de.viralvince.paintball.main.Main;
@@ -701,11 +704,11 @@ public class EVENTinteract implements Listener{
 															startcoolsek1 = 20;
 														}
 														if (!(slime.isOnGround() == true)) {
-															if(slime.getFallDistance() <= 0) {
+
 														p.getWorld().playEffect(slime.getLocation(), Effect.SLIME, 5);
 															
+													
 													}
-														}
 													}
 												}, 0, 5);
 										    
@@ -886,12 +889,24 @@ public class EVENTinteract implements Listener{
 						if(!sEnderman.contains(p)) {
 							
 							
+							final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.ENDER_PEARL));
+							p.playSound(p.getLocation(), Sound.ENDERMAN_TELEPORT, 1, 1);
+							((Entity) slime).setVelocity(p.getLocation().getDirection().multiply(1.2D));
+							startcool1 = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+								@Override
+								public void run() {
+									
+									if(slime.isOnGround() == true) {
+										p.teleport(slime.getLocation());
+										slime.remove();
+										Bukkit.getScheduler().cancelTask(startcool1);										
+									}																													
+								}
+							}, 0, 1);
+						
+						sEnderman.add(p);
 							
-							
-							sEnderman.add(p);
-							
-						spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
-
+							spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
 								@Override
 								public void run() {
 									p.setLevel(spcoolsek);
