@@ -38,7 +38,7 @@ import de.viralvince.paintball.listeners.EVENTquit;
 
 
 
-public class Main extends JavaPlugin implements Listener{
+public class Main extends JavaPlugin implements Listener {
 	
 	private static Main instance;
 	private MySQL mysql;

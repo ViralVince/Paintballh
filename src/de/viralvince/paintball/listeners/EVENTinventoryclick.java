@@ -82,6 +82,7 @@ public class EVENTinventoryclick implements Listener{
 							p.getInventory().setItem(0, red);
 							 if(Main.blue.contains(p)) {
 								Main.blue.remove(p);
+								
 								Main.red.add(p);
 								p.sendMessage(Main.pr + " §aDu bist nun in Team §cRot");								  
 							 } else {
