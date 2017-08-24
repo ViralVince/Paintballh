@@ -43,7 +43,7 @@ public class EVENTinteract implements Listener{
 	public static ArrayList<Player> map3 = new ArrayList<>();
 	public static ArrayList<Player> sStarter = new ArrayList<>();
 	public static ArrayList<Player> sEnderman = new ArrayList<>();
-	public static ArrayList<Player> sDarknes = new ArrayList<>();
+	public static ArrayList<Player> sDarkness = new ArrayList<>();
 	public static ArrayList<Player> sLight = new ArrayList<>();
 	@EventHandler
 	
@@ -887,6 +887,50 @@ public class EVENTinteract implements Listener{
 						//____________________________________________
 					} else if(p.getItemInHand().equals(ends)) {
 						if(!sEnderman.contains(p)) {
+							
+							
+							final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.ENDER_PEARL));
+							p.playSound(p.getLocation(), Sound.ENDERMAN_TELEPORT, 1, 1);
+							((Entity) slime).setVelocity(p.getLocation().getDirection().multiply(1.2D));
+							startcool1 = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+								@Override
+								public void run() {
+									
+									if(slime.isOnGround() == true) {
+										p.teleport(slime.getLocation());
+										slime.remove();
+										Bukkit.getScheduler().cancelTask(startcool1);										
+									}																													
+								}
+							}, 0, 1);
+						
+						sEnderman.add(p);
+							
+							spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+								@Override
+								public void run() {
+									p.setLevel(spcoolsek);
+									spcoolsek--;
+									if(spcoolsek == 0) {
+											
+											sEnderman.remove(p);
+											Bukkit.getScheduler().cancelTask(spcool);
+											spcoolsek = 30;
+									}
+									
+									
+									
+									}
+								
+							}, 0, 20);
+							
+						
+						} else {
+							p.sendMessage(Main.pr+ " §cWarte noch §6" + spcoolsek + " §cSekunden befor du die Spezialattacke erneut einsetzen kannst!");
+						}
+				
+					} else if(p.getItemInHand().equals(startersr)) {
+						if(!sDarkness.contains(p)) {
 							
 							
 							final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.ENDER_PEARL));
