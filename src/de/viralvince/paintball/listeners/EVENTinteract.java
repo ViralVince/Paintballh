@@ -933,22 +933,60 @@ public class EVENTinteract implements Listener{
 						if(!sDarkness.contains(p)) {
 							
 							
-							final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.ENDER_PEARL));
-							p.playSound(p.getLocation(), Sound.ENDERMAN_TELEPORT, 1, 1);
+							final Item slime = (Item) p.getWorld().dropItem(p.getEyeLocation(), new ItemStack(Material.COAL_BLOCK));
+							p.playSound(p.getLocation(), Sound.DIG_STONE, 1, 1);
 							((Entity) slime).setVelocity(p.getLocation().getDirection().multiply(1.2D));
-							startcool1 = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
+							
+							new BukkitRunnable() {
 								@Override
 								public void run() {
+								
+								
 									
+									for(Entity e : slime.getLocation().getChunk().getEntities()) {
+										if (!(slime.getVelocity().equals(slime.getVelocity().zero()))) { 
+										if(e.getLocation().distance(slime.getLocation()) < 2.0) {
+											if(e instanceof Player) {
+												if(!(e == p)) {
+														if(!(Main.getInstance().getRed().contains(p) && Main.getInstance().getRed().contains(e)) || (Main.getInstance().getBlue().contains(p) && Main.getInstance().getBlue().contains(e))) {
+
+															if(((Player) e).getHealth() - 1.0 == 0.0) {
+																
+																Main.getInstance().killed.put((Player) e, p);															
+															
+															}
+															
+														((Player) e).damage(1.0);
+
+														 PotionEffect effect = new PotionEffect(PotionEffectType.BLINDNESS, 100 , 1);
+														 ((Player) e).addPotionEffect(effect);
+														
+										
+												
+													}
+												}
+											}
+											}
+											
+											
+										}
+									
+									}
+						            
+									
+								    
 									if(slime.isOnGround() == true) {
-										p.teleport(slime.getLocation());
+										
 										slime.remove();
 										Bukkit.getScheduler().cancelTask(startcool1);										
-									}																													
+									}	
+								    
+									
 								}
-							}, 0, 1);
+						    	
+						    }.runTaskTimer(Main.getInstance(), 0, 1);
 						
-						sEnderman.add(p);
+						sDarkness.add(p);
 							
 							spcool = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(), new Runnable() {
 								@Override
@@ -957,7 +995,7 @@ public class EVENTinteract implements Listener{
 									spcoolsek--;
 									if(spcoolsek == 0) {
 											
-											sEnderman.remove(p);
+											sDarkness.remove(p);
 											Bukkit.getScheduler().cancelTask(spcool);
 											spcoolsek = 30;
 									}

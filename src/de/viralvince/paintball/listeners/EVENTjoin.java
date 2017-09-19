@@ -77,6 +77,7 @@ public class EVENTjoin implements Listener{
 		p.setFoodLevel(20);
 		p.getInventory().clear();
 		p.setLevel(0);
+		p.setExp(0);
 		String UUID = p.getUniqueId().toString();
 		if(!Main.getInstance().getCoinsapi().existCoinsPlayer(UUID)) {
 			Main.getInstance().getCoinsapi().createCoinsPlayer(UUID);

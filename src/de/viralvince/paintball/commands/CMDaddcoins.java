@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 import de.viralvince.paintball.main.Main;
 
-public class CMDaddcoins implements CommandExecutor{
+public class CMDaddcoins implements CommandExecutor {
 	
 	
 	@Override
