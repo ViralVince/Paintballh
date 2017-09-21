@@ -27,7 +27,8 @@ public class CMDaddcoins implements CommandExecutor {
 							if(Main.getInstance().getCoinsapi().existCoinsPlayer(targetUUID)) {
 							Main.getInstance().getCoinsapi().addCoins(targetUUID, x);
 							
-							p.sendMessage(Main.pr + " �aDer Spieler �6" +target.getName()+ " �ahat �6 " + args[1] + " �aCoins erhalten");					
+							p.sendMessage(Main.pr + " �aDer Spieler �6" +target.getName()+ " �ahat �6 " + args[1] + " �aCoins erhalten");
+					
 							}						
 						} else {
 							p.sendMessage(Main.pr +" �cDer Spieler �6"+ args[0] + " �cIst nicht auf dem Server");
