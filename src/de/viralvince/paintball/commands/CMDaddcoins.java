@@ -27,25 +27,21 @@ public class CMDaddcoins implements CommandExecutor {
 							if(Main.getInstance().getCoinsapi().existCoinsPlayer(targetUUID)) {
 							Main.getInstance().getCoinsapi().addCoins(targetUUID, x);
 							
-							p.sendMessage(Main.pr + " §aDer Spieler §6" +target.getName()+ " §ahat §6 " + args[1] + " §aCoins erhalten");
-						//g
-							p.sendMessage("");
+							p.sendMessage(Main.pr + " ï¿½aDer Spieler ï¿½6" +target.getName()+ " ï¿½ahat ï¿½6 " + args[1] + " ï¿½aCoins erhalten");
 					
-							}
-						
-							
+							}						
 						} else {
-							p.sendMessage(Main.pr +" §cDer Spieler §6"+ args[0] + " §cIst nicht auf dem Server");
+							p.sendMessage(Main.pr +" ï¿½cDer Spieler ï¿½6"+ args[0] + " ï¿½cIst nicht auf dem Server");
 						}
 					
 					} else {
-						p.sendMessage(Main.pr +" §cBitte benutze nur §6/addcoins <Spieler> <Anzahl>§c!");
+						p.sendMessage(Main.pr +" ï¿½cBitte benutze nur ï¿½6/addcoins <Spieler> <Anzahl>ï¿½c!");
 					}
 					
 					
 				} else {
 					
-					p.sendMessage(Main.pr +" §cDazu hast du keine Rechte!");
+					p.sendMessage(Main.pr +" ï¿½cDazu hast du keine Rechte!");
 				}
 			
 		}
