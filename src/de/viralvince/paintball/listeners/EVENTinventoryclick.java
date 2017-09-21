@@ -33,7 +33,7 @@ public class EVENTinventoryclick implements Listener{
 		e.setCancelled(true);
 		if(e.getCurrentItem().getType() != Material.AIR) {
 			
-			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½9Blau")) {
+			if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§9Blau")) {
 				
 				if(!Main.blue.contains(p)) {
 					int isinred = 0;
@@ -42,31 +42,31 @@ public class EVENTinventoryclick implements Listener{
 					}										
 					if(Main.blue.size()+1-(Main.red.size()-isinred)< 2) {
 							p.closeInventory();		
-							p.setDisplayName("ï¿½9"+ p.getName()+ "ï¿½f");															
+							p.setDisplayName("§9"+ p.getName()+ "§f");															
 							
 							ItemStack red = new ItemStack(Material.WOOL, 1, DyeColor.BLUE.getData());
 							ItemMeta redim = red.getItemMeta();
-							redim.setDisplayName(Main.pr + " ï¿½7Du bist in Team ï¿½9Blau");							
+							redim.setDisplayName(Main.pr + " §7Du bist in Team §9Blau");							
 							red.setItemMeta(redim);
 							p.getInventory().setItem(0, red);
 							
 							 if(Main.red.contains(p)) {
 								Main.red.remove(p);
 								Main.blue.add(p);
-								p.sendMessage(Main.pr + " ï¿½aDu bist nun in Team ï¿½9Blau");								  
+								p.sendMessage(Main.pr + " §aDu bist nun in Team §9Blau");								  
 							 } else {
 								 Main.blue.add(p);
-								 p.sendMessage(Main.pr + " ï¿½aDu bist nun in Team ï¿½9Blau");
+								 p.sendMessage(Main.pr + " §aDu bist nun in Team §9Blau");
 							 } 
 					} else {
-						p.sendMessage(Main.pr + " ï¿½cDie Spielerzahlen sind nicht ausgeglichen");
+						p.sendMessage(Main.pr + " §cDie Spielerzahlen sind nicht ausgeglichen");
 						p.closeInventory();
 					}
 				} else {
-					p.sendMessage(Main.pr + " ï¿½cDu bist bereits in diesem Team");
+					p.sendMessage(Main.pr + " §cDu bist bereits in diesem Team");
 					p.closeInventory();
 				}
-			} else if(e.getCurrentItem().getItemMeta().getDisplayName().equals("ï¿½cRot")) {
+			} else if(e.getCurrentItem().getItemMeta().getDisplayName().equals("§cRot")) {
 				if(!Main.red.contains(p)) {
 					int isinred = 0;
 					if(Main.blue.contains(p)){
@@ -74,40 +74,40 @@ public class EVENTinventoryclick implements Listener{
 					}
 					if(Main.red.size()+1-(Main.blue.size()-isinred)< 2) {
 							p.closeInventory();		
-							p.setDisplayName("ï¿½c"+ p.getName()+ "ï¿½f");
+							p.setDisplayName("§c"+ p.getName()+ "§f");
 							ItemStack red = new ItemStack(Material.WOOL, 1, DyeColor.RED.getData());
 							ItemMeta redim = red.getItemMeta();
-							redim.setDisplayName(Main.pr + " ï¿½7Du bist in Team ï¿½cRot");
+							redim.setDisplayName(Main.pr + " §7Du bist in Team §cRot");
 							red.setItemMeta(redim);
 							p.getInventory().setItem(0, red);
 							 if(Main.blue.contains(p)) {
 								Main.blue.remove(p);
 								
 								Main.red.add(p);
-								p.sendMessage(Main.pr + " ï¿½aDu bist nun in Team ï¿½cRot");								  
+								p.sendMessage(Main.pr + " §aDu bist nun in Team §cRot");								  
 							 } else {
 								 Main.red.add(p);
-								 p.sendMessage(Main.pr + " ï¿½aDu bist nun in Team ï¿½cRot");
+								 p.sendMessage(Main.pr + " §aDu bist nun in Team §cRot");
 							 } 
 					} else {
-						p.sendMessage(Main.pr + " ï¿½cDie Spielerzahlen sind nicht ausgeglichen");
+						p.sendMessage(Main.pr + " §cDie Spielerzahlen sind nicht ausgeglichen");
 						p.closeInventory();
 					}
 				} else {
-					p.sendMessage(Main.pr + " ï¿½cDu bist bereits in diesem Team");
+					p.sendMessage(Main.pr + " §cDu bist bereits in diesem Team");
 					p.closeInventory();
 				}
-		} else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aEnderman (gekauft)") || e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aEnderman ï¿½c(nicht gekauft)")) {
+		} else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aEnderman (gekauft)") || e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aEnderman §c(nicht gekauft)")) {
     		
 			p.closeInventory();
     	e.setCancelled(true);
     	if(Main.getInstance().getKitapi().getKit(UUID, 2) == 1) {
     		if(Enderman.contains(p)) {
-			p.sendMessage(Main.pr + " ï¿½cDu hast dieses Kit bereits ausgewï¿½hlt");
+			p.sendMessage(Main.pr + " §cDu hast dieses Kit bereits ausgewählt");
 		} else {
     	    
     		Enderman.add(p);
-    		p.sendMessage(Main.pr + " ï¿½aDu hast das Kit ï¿½6Enderman ï¿½aausgewï¿½hlt");
+    		p.sendMessage(Main.pr + " §aDu hast das Kit §6Enderman §aausgewählt");
     		
     		
     		if(Starter.contains(p)) {
@@ -122,27 +122,27 @@ public class EVENTinventoryclick implements Listener{
 		}
 	} else if(Main.getInstance().getKitapi().getKit(UUID, 2) == 0){
 		
-		Inventory invender = Bukkit.createInventory(null, 27, Main.pr + " ï¿½7Enderman");
+		Inventory invender = Bukkit.createInventory(null, 27, Main.pr + " §7Enderman");
 		ItemStack kaufen = new ItemStack(Material.GOLD_INGOT);
 		ItemMeta imkaufen = kaufen.getItemMeta();
-		imkaufen.setDisplayName("ï¿½aKit kaufen fï¿½r ï¿½65000 ï¿½aCoins");
+		imkaufen.setDisplayName("§aKit kaufen für §65000 §aCoins");
 		
 		kaufen.setItemMeta(imkaufen);
 		invender.setItem(16, kaufen);
 		
 		ItemStack coins = new ItemStack(Material.PAPER);
 		ItemMeta imcoins = coins.getItemMeta();
-		imcoins.setDisplayName("ï¿½aDu hast ï¿½6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " ï¿½aCoins");		
+		imcoins.setDisplayName("§aDu hast §6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " §aCoins");		
 		coins.setItemMeta(imcoins);
 		invender.setItem(10, coins);
 		
 		ItemStack enderman = new ItemStack(Material.ENDER_PEARL);
 		ItemMeta imenderman = enderman.getItemMeta();
-		imenderman.setDisplayName("ï¿½aKit: Enderman");
+		imenderman.setDisplayName("§aKit: Enderman");
 		List<String> edlore = new ArrayList<String>();
-		edlore.add("ï¿½7Das mï¿½chtige Enderman Kit");
-		edlore.add("ï¿½7Schaden: 1 Hertz pro Treffer");
-		edlore.add("ï¿½7Specialattack: Der Spieler kann sich mit einem Schuss teleportierten");
+		edlore.add("§7Das mächtige Enderman Kit");
+		edlore.add("§7Schaden: 1 Hertz pro Treffer");
+		edlore.add("§7Specialattack: Der Spieler kann sich mit einem Schuss teleportierten");
 		imenderman.setLore(edlore);
 		
 		
@@ -154,17 +154,17 @@ public class EVENTinventoryclick implements Listener{
 		//12 14
 	}
     		
-    } else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aStarter (gekauft)")) {
+    } else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aStarter (gekauft)")) {
 		
     	
     	e.setCancelled(true);
     	p.closeInventory();
     	
     	if(Starter.contains(p)) {
-			p.sendMessage(Main.pr + " ï¿½cDu hast dieses Kit bereits ausgewï¿½hlt");
+			p.sendMessage(Main.pr + " §cDu hast dieses Kit bereits ausgewählt");
 		} else {
     	   Starter.add(p);
-    		p.sendMessage(Main.pr + " ï¿½aDu hast das Kit ï¿½6Starter ï¿½aausgewï¿½hlt");
+    		p.sendMessage(Main.pr + " §aDu hast das Kit §6Starter §aausgewählt");
     		
     		if(Enderman.contains(p)) {
     			Enderman.remove(p);
@@ -177,94 +177,94 @@ public class EVENTinventoryclick implements Listener{
     		}
 		}
     	
-    } else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aKit kaufen fï¿½r ï¿½65000 ï¿½aCoins")) {
-    	if(e.getClickedInventory().getName().equals(Main.pr + " ï¿½7Enderman")) {
+    } else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aKit kaufen für §65000 §aCoins")) {
+    	if(e.getClickedInventory().getName().equals(Main.pr + " §7Enderman")) {
     		if(Main.getInstance().getCoinsapi().getCoins(UUID) <= 5000) {
-    			p.sendMessage(Main.pr+" ï¿½cDu hast nicht genï¿½gend Coins um dieses Kit zu kaufen: Deine Coins ï¿½6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " ï¿½c| Benï¿½tigte Coins: ï¿½65000"); 										
+    			p.sendMessage(Main.pr+" §cDu hast nicht genügend Coins um dieses Kit zu kaufen: Deine Coins §6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " §c| Benötigte Coins: §65000"); 										
     			p.closeInventory();
     			
     				} else {
-    					Inventory invbestï¿½ = Bukkit.createInventory(null, 27, Main.pr + " ï¿½7Enderman");
+    					Inventory invbestä = Bukkit.createInventory(null, 27, Main.pr + " §7Enderman");
     					ItemStack kaufen = new ItemStack(Material.STAINED_CLAY, 1, DyeColor.GREEN.getData());
     					List<String> lore = new ArrayList<String>();
     					ItemMeta imkaufen = kaufen.getItemMeta();
     					long coinsminus = Main.getInstance().getCoinsapi().getCoins(UUID)-5000;
-    					lore.add("ï¿½cCoins nach dem Kauf:ï¿½6 " +coinsminus);
-    					imkaufen.setDisplayName("ï¿½aKit wirklich kaufen fï¿½r ï¿½65000 ï¿½aCoins");
+    					lore.add("§cCoins nach dem Kauf:§6 " +coinsminus);
+    					imkaufen.setDisplayName("§aKit wirklich kaufen für §65000 §aCoins");
     					imkaufen.setLore(lore);				
     					kaufen.setItemMeta(imkaufen);
-    					invbestï¿½.setItem(15, kaufen);
+    					invbestä.setItem(15, kaufen);
     					
     					ItemStack coins = new ItemStack(Material.PAPER);
     					ItemMeta imcoins = coins.getItemMeta();
-    					imcoins.setDisplayName("ï¿½aDu hast ï¿½6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " ï¿½aCoins");		
+    					imcoins.setDisplayName("§aDu hast §6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " §aCoins");		
     					coins.setItemMeta(imcoins);
-    					invbestï¿½.setItem(11, coins);
+    					invbestä.setItem(11, coins);
     					
-    					p.openInventory(invbestï¿½);
+    					p.openInventory(invbestä);
     				
     				}
-    			} else if(e.getClickedInventory().getName().equals(Main.pr + " ï¿½7Darkness")) {
+    			} else if(e.getClickedInventory().getName().equals(Main.pr + " §7Darkness")) {
     				if(Main.getInstance().getCoinsapi().getCoins(UUID) < 5000) {
-    	    			p.sendMessage(Main.pr+" ï¿½cDu hast nicht genï¿½gend Coins um dieses Kit zu kaufen: Deine Coins ï¿½6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " ï¿½c| Benï¿½tigte Coins: ï¿½65000"); 										
+    	    			p.sendMessage(Main.pr+" §cDu hast nicht genügend Coins um dieses Kit zu kaufen: Deine Coins §6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " §c| Benötigte Coins: §65000"); 										
     	    			p.closeInventory();
     	    			
     	    				} else {
-    	    					Inventory invbestï¿½ = Bukkit.createInventory(null, 27, Main.pr + " ï¿½7Darkness");
+    	    					Inventory invbestä = Bukkit.createInventory(null, 27, Main.pr + " §7Darkness");
     	    					ItemStack kaufen = new ItemStack(Material.STAINED_CLAY, 1, DyeColor.GREEN.getData());
     	    					List<String> lore = new ArrayList<String>();
     	    					ItemMeta imkaufen = kaufen.getItemMeta();
     	    					long coinsminus = Main.getInstance().getCoinsapi().getCoins(UUID)-5000;
-    	    					lore.add("ï¿½cCoins nach dem Kauf:ï¿½6 " +coinsminus);
-    	    					imkaufen.setDisplayName("ï¿½aKit wirklich kaufen fï¿½r ï¿½65000 ï¿½aCoins");
+    	    					lore.add("§cCoins nach dem Kauf:§6 " +coinsminus);
+    	    					imkaufen.setDisplayName("§aKit wirklich kaufen für §65000 §aCoins");
     	    					imkaufen.setLore(lore);				
     	    					kaufen.setItemMeta(imkaufen);
-    	    					invbestï¿½.setItem(15, kaufen);
+    	    					invbestä.setItem(15, kaufen);
     	    					
     	    					ItemStack coins = new ItemStack(Material.PAPER);
     	    					ItemMeta imcoins = coins.getItemMeta();
-    	    					imcoins.setDisplayName("ï¿½aDu hast ï¿½6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " ï¿½aCoins");		
+    	    					imcoins.setDisplayName("§aDu hast §6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " §aCoins");		
     	    					coins.setItemMeta(imcoins);
-    	    					invbestï¿½.setItem(11, coins);
+    	    					invbestä.setItem(11, coins);
     	    					
-    	    					p.openInventory(invbestï¿½);
+    	    					p.openInventory(invbestä);
     	    				}
-    			} else if(e.getClickedInventory().getName().equals(Main.pr + " ï¿½7Light")) {
+    			} else if(e.getClickedInventory().getName().equals(Main.pr + " §7Light")) {
     				if(Main.getInstance().getCoinsapi().getCoins(UUID) < 5000) {
-    	    			p.sendMessage(Main.pr+" ï¿½cDu hast nicht genï¿½gend Coins um dieses Kit zu kaufen: Deine Coins ï¿½6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " ï¿½c| Benï¿½tigte Coins: ï¿½65000"); 										
+    	    			p.sendMessage(Main.pr+" §cDu hast nicht genügend Coins um dieses Kit zu kaufen: Deine Coins §6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " §c| Benötigte Coins: §65000"); 										
     	    			p.closeInventory();
     	    			
     	    				} else {
-    	    					Inventory invbestï¿½ = Bukkit.createInventory(null, 27, Main.pr + " ï¿½7Light");
+    	    					Inventory invbestä = Bukkit.createInventory(null, 27, Main.pr + " §7Light");
     	    					ItemStack kaufen = new ItemStack(Material.STAINED_CLAY, 1, DyeColor.GREEN.getData());
     	    					List<String> lore = new ArrayList<String>();
     	    					ItemMeta imkaufen = kaufen.getItemMeta();
     	    					long coinsminus = Main.getInstance().getCoinsapi().getCoins(UUID)-5000;
-    	    					lore.add("ï¿½cCoins nach dem Kauf:ï¿½6 " +coinsminus);
-    	    					imkaufen.setDisplayName("ï¿½aKit wirklich kaufen fï¿½r ï¿½65000 ï¿½aCoins");
+    	    					lore.add("§cCoins nach dem Kauf:§6 " +coinsminus);
+    	    					imkaufen.setDisplayName("§aKit wirklich kaufen für §65000 §aCoins");
     	    					imkaufen.setLore(lore);				
     	    					kaufen.setItemMeta(imkaufen);
-    	    					invbestï¿½.setItem(15, kaufen);
+    	    					invbestä.setItem(15, kaufen);
     	    					
     	    					ItemStack coins = new ItemStack(Material.PAPER);
     	    					ItemMeta imcoins = coins.getItemMeta();
-    	    					imcoins.setDisplayName("ï¿½aDu hast ï¿½6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " ï¿½aCoins");		
+    	    					imcoins.setDisplayName("§aDu hast §6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " §aCoins");		
     	    					coins.setItemMeta(imcoins);
-    	    					invbestï¿½.setItem(11, coins);
+    	    					invbestä.setItem(11, coins);
     	    					
-    	    					p.openInventory(invbestï¿½);
+    	    					p.openInventory(invbestä);
     	    				}
     			}
     	
-    		} else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aKit wirklich kaufen fï¿½r ï¿½65000 ï¿½aCoins")) {
-    			if(e.getClickedInventory().getName().equals(Main.pr + " ï¿½7Enderman")) {
+    		} else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aKit wirklich kaufen für §65000 §aCoins")) {
+    			if(e.getClickedInventory().getName().equals(Main.pr + " §7Enderman")) {
     				if(Main.getInstance().getCoinsapi().getCoins(UUID) >= 5000) {
     					Main.getInstance().getCoinsapi().removeCoins(UUID, 5000);
     					Main.getInstance().getKitapi().addKit(UUID, 2);
     					p.closeInventory();
-    					p.sendMessage(Main.pr +" ï¿½aKauf erfolgreich");
+    					p.sendMessage(Main.pr +" §aKauf erfolgreich");
     					Enderman.add(p);
-    		    		p.sendMessage(Main.pr + " ï¿½aDu hast das Kit ï¿½6Enderman ï¿½aausgewï¿½hlt");
+    		    		p.sendMessage(Main.pr + " §aDu hast das Kit §6Enderman §aausgewählt");
     		    		
     		    		if(Starter.contains(p)) {
     		    			Starter.remove(p);
@@ -277,14 +277,14 @@ public class EVENTinventoryclick implements Listener{
     		    		}
     				
     				}
-    			} else if(e.getClickedInventory().getName().equals(Main.pr + " ï¿½7Darkness")) {
+    			} else if(e.getClickedInventory().getName().equals(Main.pr + " §7Darkness")) {
     				if(Main.getInstance().getCoinsapi().getCoins(UUID) >= 5000) {
     					Main.getInstance().getCoinsapi().removeCoins(UUID, 5000);
     					Main.getInstance().getKitapi().addKit(UUID, 3);
     					p.closeInventory();
-    					p.sendMessage(Main.pr +" ï¿½aKauf erfolgreich");
+    					p.sendMessage(Main.pr +" §aKauf erfolgreich");
     					Darkness.add(p);
-    	        		p.sendMessage(Main.pr + " ï¿½aDu hast das Kit ï¿½6Darkness ï¿½aausgewï¿½hlt");
+    	        		p.sendMessage(Main.pr + " §aDu hast das Kit §6Darkness §aausgewählt");
     	        		
     	        		if(Starter.contains(p)) {
     	        			Starter.remove(p);
@@ -296,14 +296,14 @@ public class EVENTinventoryclick implements Listener{
     	        			Light.remove(p);
     	        		}
     				}
-    			} else if(e.getClickedInventory().getName().equals(Main.pr + " ï¿½7Light")) {
+    			} else if(e.getClickedInventory().getName().equals(Main.pr + " §7Light")) {
     				if(Main.getInstance().getCoinsapi().getCoins(UUID) >= 5000) {
     					Main.getInstance().getCoinsapi().removeCoins(UUID, 5000);
     					Main.getInstance().getKitapi().addKit(UUID, 4);
     					p.closeInventory();
-    					p.sendMessage(Main.pr +" ï¿½aKauf erfolgreich");
+    					p.sendMessage(Main.pr +" §aKauf erfolgreich");
     					Light.add(p);
-    	        		p.sendMessage(Main.pr + " ï¿½aDu hast das Kit ï¿½6Light ï¿½aausgewï¿½hlt");
+    	        		p.sendMessage(Main.pr + " §aDu hast das Kit §6Light §aausgewählt");
     	        		
     	        		if(Starter.contains(p)) {
     	        			Starter.remove(p);
@@ -316,17 +316,17 @@ public class EVENTinventoryclick implements Listener{
     	        		}
     				}
     			}
-    		}  else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aDarkness (gekauft)") || e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aDarkness ï¿½c(nicht gekauft)")) {
+    		}  else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aDarkness (gekauft)") || e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aDarkness §c(nicht gekauft)")) {
         		
     			p.closeInventory();
         	e.setCancelled(true);
         	if(Main.getInstance().getKitapi().getKit(UUID, 3) == 1) {
         		if(Darkness.contains(p)) {
-    			p.sendMessage(Main.pr + " ï¿½cDu hast dieses Kit bereits ausgewï¿½hlt");
+    			p.sendMessage(Main.pr + " §cDu hast dieses Kit bereits ausgewählt");
     		} else {
         	    
         		Darkness.add(p);
-        		p.sendMessage(Main.pr + " ï¿½aDu hast das Kit ï¿½6Darkness ï¿½aausgewï¿½hlt");
+        		p.sendMessage(Main.pr + " §aDu hast das Kit §6Darkness §aausgewählt");
         		
         		if(Starter.contains(p)) {
         			Starter.remove(p);
@@ -340,27 +340,27 @@ public class EVENTinventoryclick implements Listener{
     		}
     	} else if(Main.getInstance().getKitapi().getKit(UUID, 3) == 0){
     		
-    		Inventory invender = Bukkit.createInventory(null, 27, Main.pr + " ï¿½7Darkness");
+    		Inventory invender = Bukkit.createInventory(null, 27, Main.pr + " §7Darkness");
     		ItemStack kaufen = new ItemStack(Material.GOLD_INGOT);
     		ItemMeta imkaufen = kaufen.getItemMeta();
-    		imkaufen.setDisplayName("ï¿½aKit kaufen fï¿½r ï¿½65000 ï¿½aCoins");
+    		imkaufen.setDisplayName("§aKit kaufen für §65000 §aCoins");
     		
     		kaufen.setItemMeta(imkaufen);
     		invender.setItem(16, kaufen);
     		
     		ItemStack coins = new ItemStack(Material.PAPER);
     		ItemMeta imcoins = coins.getItemMeta();
-    		imcoins.setDisplayName("ï¿½aDu hast ï¿½6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " ï¿½aCoins");		
+    		imcoins.setDisplayName("§aDu hast §6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " §aCoins");		
     		coins.setItemMeta(imcoins);
     		invender.setItem(10, coins);
     		
     		ItemStack enderman = new ItemStack(Material.COAL_BLOCK);
     		ItemMeta imenderman = enderman.getItemMeta();
-    		imenderman.setDisplayName("ï¿½aKit: Darkness");
+    		imenderman.setDisplayName("§aKit: Darkness");
     		List<String> dalore = new ArrayList<String>();
-			dalore.add("ï¿½7Das dunkle Darkness Kit");
-			dalore.add("ï¿½7Schaden: 1 Hertz pro Treffer");
-			dalore.add("ï¿½7Specialattack: Gibt dem getroffenen Gegner Blindness fï¿½r 5 Sekunden");
+			dalore.add("§7Das dunkle Darkness Kit");
+			dalore.add("§7Schaden: 1 Hertz pro Treffer");
+			dalore.add("§7Specialattack: Gibt dem getroffenen Gegner Blindness für 5 Sekunden");
 			imenderman.setLore(dalore);
     		
     		
@@ -373,16 +373,16 @@ public class EVENTinventoryclick implements Listener{
     	
         
     	}
-    		} else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aLight (gekauft)") || e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("ï¿½aLight ï¿½c(nicht gekauft)")) {
+    		} else if(e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aLight (gekauft)") || e.getCurrentItem().getItemMeta().getDisplayName().equalsIgnoreCase("§aLight §c(nicht gekauft)")) {
        			p.closeInventory();
             	e.setCancelled(true);
             	if(Main.getInstance().getKitapi().getKit(UUID, 4) == 1) {
             		if(Light.contains(p)) {
-        			p.sendMessage(Main.pr + " ï¿½cDu hast dieses Kit bereits ausgewï¿½hlt");
+        			p.sendMessage(Main.pr + " §cDu hast dieses Kit bereits ausgewählt");
         		} else {
             	    
             		Light.add(p);
-            		p.sendMessage(Main.pr + " ï¿½aDu hast das Kit ï¿½6Light ï¿½aausgewï¿½hlt");
+            		p.sendMessage(Main.pr + " §aDu hast das Kit §6Light §aausgewählt");
             		
             		if(Starter.contains(p)) {
             			Starter.remove(p);
@@ -396,27 +396,27 @@ public class EVENTinventoryclick implements Listener{
         		}
         	} else if(Main.getInstance().getKitapi().getKit(UUID, 4) == 0){
         		
-        		Inventory invender = Bukkit.createInventory(null, 27, Main.pr + " ï¿½7Light");
+        		Inventory invender = Bukkit.createInventory(null, 27, Main.pr + " §7Light");
         		ItemStack kaufen = new ItemStack(Material.GOLD_INGOT);
         		ItemMeta imkaufen = kaufen.getItemMeta();
-        		imkaufen.setDisplayName("ï¿½aKit kaufen fï¿½r ï¿½65000 ï¿½aCoins");
+        		imkaufen.setDisplayName("§aKit kaufen für §65000 §aCoins");
         		
         		kaufen.setItemMeta(imkaufen);
         		invender.setItem(16, kaufen);
         		
         		ItemStack coins = new ItemStack(Material.PAPER);
         		ItemMeta imcoins = coins.getItemMeta();
-        		imcoins.setDisplayName("ï¿½aDu hast ï¿½6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " ï¿½aCoins");		
+        		imcoins.setDisplayName("§aDu hast §6 "+ Main.getInstance().getCoinsapi().getCoins(UUID) + " §aCoins");		
         		coins.setItemMeta(imcoins);
         		invender.setItem(10, coins);
         		
         		ItemStack enderman = new ItemStack(Material.NETHER_STAR);
         		ItemMeta imenderman = enderman.getItemMeta();
-        		imenderman.setDisplayName("ï¿½aKit: Light");
+        		imenderman.setDisplayName("§aKit: Light");
         		List<String> lilore = new ArrayList<String>();
-				lilore.add("ï¿½7Das blendende Light Kit");
-				lilore.add("ï¿½7Schaden: 1 Hertz pro Treffer");
-				lilore.add("ï¿½7Specialattack: Schiess Blitze auf Gegner in der Nï¿½he");
+				lilore.add("§7Das blendende Light Kit");
+				lilore.add("§7Schaden: 1 Hertz pro Treffer");
+				lilore.add("§7Specialattack: Schiess Blitze auf Gegner in der Nähe");
 				imenderman.setLore(lilore);
         		
         		
