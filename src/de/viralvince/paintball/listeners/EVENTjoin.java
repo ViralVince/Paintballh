@@ -1,4 +1,4 @@
-package de.viralvince.paintball.listeners;
+package src.de.viralvince.paintball.listeners;
 
 import java.io.File;
 import org.bukkit.Bukkit;
@@ -18,9 +18,7 @@ import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 
-import de.viralvince.paintball.main.CDPB;
-import de.viralvince.paintball.main.Gamestate;
-import de.viralvince.paintball.main.Main;
+import src.de.viralvince.paintball.main.Main;
 
 
 
